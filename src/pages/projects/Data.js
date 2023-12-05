@@ -30,7 +30,7 @@ export const projectData=[
         img:ss,
         title:'Js Protfolio',
         category:'Javascirpt',
-        link:'http://js-portfolio-project.surge.sh'
+        link:'http://js-portfolios.surge.sh'
     },
     {
         id:5,

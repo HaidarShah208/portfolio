@@ -61,7 +61,7 @@ export default function Data() {
           I'm Mern stack front end web developer and now learning more in
           backend development.
         </p>
-        <a href="" className="button button--flex">
+        <a href="https://wa.me/923107580073" className="button button--flex">
           Say Hello
           <svg
             className="button__icon"

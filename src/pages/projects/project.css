@@ -9,7 +9,7 @@
     .work_item {
         cursor: pointer;
         color: var(--title-color);
-        padding: 0.25rem 0.75rem;
+        padding: 0.25rem 0.35rem;
         font-weight: var(--font-medium);
         border-radius: 0.5rem;
         text-transform: capitalize;
@@ -88,6 +88,9 @@
         .work_container {
             grid-template-columns: repeat(2, max-content);
         }
+        .work_filters {
+            column-gap: 0.15rem;
+        }
     }
     
     @media screen and (max-width: 576px) {
@@ -97,6 +100,9 @@
         .work_img {
             width: 100%;
         }
+        .work_filters {
+            column-gap: 0.15rem;
+        }
     }
     
     @media screen and (max-width: 350px) {
@@ -104,6 +110,6 @@
             font-size: var(--small-font-size);
         }
         .work_filters {
-            column-gap: 0.25rem;
+            column-gap: 0.15rem;
         }
     }

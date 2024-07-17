@@ -22,11 +22,17 @@ useEffect(() => {
 }, []);
 
 
+
 //header in medium screen
   const [Toggle,showMenu]=useState(false)
 
   //active nav in header
   const [activeNav,setActiveNav]=useState('#home')
+  const handleLinkClick = (id) => {
+    setActiveNav(id);
+    showMenu(false); // Hide the menu when a link is clicked
+  };
+
   return (
     <header className="header">
       <nav className="nav container">
@@ -35,33 +41,49 @@ useEffect(() => {
         </Link>
         <div className={Toggle?"nav_menu show_menu ":"nav_menu"}>
           <ul className="nav_list grid">
-            <li className="nav_item">
-              <a href="#home" onClick={()=>setActiveNav('#home')}  className={activeNav ==='#home' ?"nav_link active-link":"nav_link"}>
+            <li className="nav_item ">
+              <a href="#home" onClick={()=>handleLinkClick('#home')}  className={activeNav ==='#home' ?"nav_link active-link":"nav_link"}>
                 <i className="uil uil-estate nav_i nav_icon"></i>Home 
               </a>
             </li>
-            <li className="nav_item">
-              <a href="#about" onClick={()=>setActiveNav('#about')} className={activeNav ==='#about' ?"nav_link active-link":"nav_link"}>
+            <li className="nav_item ">
+              <a href="#about" onClick={()=>handleLinkClick('#about')} className={activeNav ==='#about' ?"nav_link active-link":"nav_link"}>
                 <i className="uil uil-user nav_i nav_icon"></i>About
               </a>
             </li>
-            <li className="nav_item">
-              <a href="#skills" className="nav_link">
+            <li className="nav_item ">
+            <a
+                href="#skills"
+                onClick={() => handleLinkClick("#skills")}
+                className={activeNav === "#skills" ? "nav_link active-link" : "nav_link"}
+              >
                 <i className="uil uil-file-alt nav_i nav_icon"></i>Skills
               </a>
             </li>
-            <li className="nav_item">
-              <a href="#services" className="nav_link">
+            <li className="nav_item ">
+            <a
+                href="#services"
+                onClick={() => handleLinkClick("#services")}
+                className={activeNav === "#services" ? "nav_link active-link" : "nav_link"}
+              >
                 <i className="uil uil-briefcase nav_i nav_icon"></i>Services
               </a>
             </li>
-            <li className="nav_item">
-              <a href="#projects" className="nav_link">
+            <li className="nav_item ">
+            <a
+                href="#projects"
+                onClick={() => handleLinkClick("#projects")}
+                className={activeNav === "#projects" ? "nav_link active-link" : "nav_link"}
+              >
                 <i className="uil uil-scenery nav_i nav_icon"></i>Projects
               </a>
             </li>
-            <li className="nav_item">
-              <a href="#contact"  className="nav_link">
+            <li className="nav_item  ">
+            <a
+                href="#contact"
+                onClick={() => handleLinkClick("#contact")}
+                className={activeNav === "#contact" ? "nav_link active-link" : "nav_link"}
+              >
                 <i className="uil uil-message nav_i nav_icon"></i>Contect 
               </a>
             </li>

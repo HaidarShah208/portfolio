@@ -125,9 +125,9 @@ export const projectData=[
 
 
 export const projectNavs=[
-    {
-        name:'all'
-    },
+    // {
+    //     name:'all'
+    // },
     {
         name:'Javascirpt'
     },

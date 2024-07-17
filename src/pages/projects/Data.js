@@ -1,6 +1,10 @@
+import ecom from '../../assests/ecom.png'
 import ss from '../../assests/ss.png'
 import movie from '../../assests/movie.png'
-import ecom from '../../assests/ecom.png'
+import medicare from '../../assests/medicare.png'
+import recipe from '../../assests/recipe.png'
+import crud from '../../assests/crud.png'
+
 
 
 export const projectData=[
@@ -63,7 +67,7 @@ export const projectData=[
     },
     {
         id:9,
-        img:'https://camo.githubusercontent.com/5b7860fba543c570cd56e1502fc702c5b3c27bde47cfa725bd17d0541b1dbe62/68747470733a2f2f692e696d6775722e636f6d2f436e5a446e49362e706e67',
+        img:crud,
         title:'CRUD',
         category:'React',
         link:'https://react-crud-eosin-seven.vercel.app/'
@@ -75,6 +79,14 @@ export const projectData=[
         title:'Tic Tac Toa game',
         category:'React',
         link:'https://tic-tac-toa-game-beta.vercel.app/'
+        
+    },
+    {
+        id:11,
+        img:recipe,
+        title:'Recipe app',
+        category:'React',
+        link:'https://ali-haidar-recipe-app-4mck.vercel.app/'
         
     },
     {
@@ -101,6 +113,14 @@ export const projectData=[
         link:'https://database-8d140.web.app'
         
     },
+    {
+        id:15,
+        img:medicare,
+        title:'Medicare Dashboard',
+        category:'MongoDb',
+        link:'https://medicare-nextjs-dashboard-zyx.vercel.app/'
+        
+    },
 ] 
 
 
@@ -116,5 +136,8 @@ export const projectNavs=[
     },
     {
         name:'Firebase'
+    },
+    {
+        name:'MongoDb'
     },
 ]

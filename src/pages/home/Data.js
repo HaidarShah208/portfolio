@@ -56,10 +56,9 @@ export default function Data() {
             ></path>
           </svg>
         </h1>
-        <h3 className="home_subtitle">Web Designer</h3>
+        <h3 className="home_subtitle">MERN Stack Developer</h3>
         <p className="home_description">
-          I'm Mern stack front end web developer and now learning more in
-          backend development.
+          I'm MERN Stack Developer and now learning more in Python language.
         </p>
         <a href="https://wa.me/923107580073" className="button button--flex">
           Say Hello

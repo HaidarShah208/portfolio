@@ -122,7 +122,7 @@ function Qualification() {
 
                     <div className="qualification_data">
                         <div>
-                            <h3 className="qualification_title">React, Firebase</h3>
+                            <h3 className="qualification_title">Firebase,<br/>MongoDb</h3>
                             <div className="qualification_calendar">
                                 <i className="uil uil-calendar-alt"></i>2023
                             </div>
@@ -140,7 +140,7 @@ function Qualification() {
                             <span className="qualification_line"></span>
                          </div>
                         <div>
-                            <h3 className="qualification_title">Nextjs</h3>
+                            <h3 className="qualification_title">Reactjs,<br/>Nextjs</h3>
                             <div className="qualification_calendar">
                                 <i className="uil uil-calendar-alt"></i>2023
                             </div>

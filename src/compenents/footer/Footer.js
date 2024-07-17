@@ -22,7 +22,7 @@ function Footer() {
             <a href="https://x.com/alihaider2080?t=U5S2mwFna4JvVNcE_JXbMg&s=08" className="footer_social-link" target='_blank'>
                 <i className="bx bxl-twitter"></i>
             </a>
-            <a href="https://www.linkedin.com/in/ali-haider-5181a5276?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" className="footer_social-link" target='_blank'>
+            <a href="https://www.linkedin.com/in/ali-haidar-5181a5276/" className="footer_social-link" target='_blank'>
             <i className="bx bxl-linkedin"></i>
             
             </a>

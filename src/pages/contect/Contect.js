@@ -56,16 +56,16 @@ function Contect() {
                     <h3 className="contact_card-title">Email</h3>
                     <span className="contact_card-data">alhi7896542@gmail.com </span>
 
-                    <a href="mailto:alhi7896542@gmail.com" className="contact_button">wirte me
+                    <a href="mailto:alhi7896542@gmail.com" className="contact_button">message me
                     <i className="bx bx-right-arrow-alt contact_button-icon"></i>
                     </a>
                 </div>
                 <div className="contact_card">
                     <i className="bx bxl-whatsapp contact_card-icon"></i>
-                    <h3 className="contact_card-title">Whats app</h3>
-                    <span className="contact_card-data">03107580073 </span>
+                    <h3 className="contact_card-title">What's app</h3>
+                    <span className="contact_card-data">+92310-7580073 </span>
 
-                    <a href="https://wa.me/923107580073" className="contact_button">wirte me
+                    <a href="https://wa.me/923107580073" className="contact_button">message me
                     <i className="bx bx-right-arrow-alt contact_button-icon"></i>
                     </a>
                 </div>
@@ -74,7 +74,7 @@ function Contect() {
                     <h3 className="contact_card-title">Linked in</h3>
                     <span className="contact_card-data">Ali Haider </span>
 
-                    <a href="https://www.linkedin.com/in/ali-haider-5181a5276?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" className="contact_button">wirte me
+                    <a href="https://www.linkedin.com/in/ali-haider-5181a5276?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" className="contact_button">visit me
                     <i className="bx bx-right-arrow-alt contact_button-icon"></i>
                     </a>
                 </div>

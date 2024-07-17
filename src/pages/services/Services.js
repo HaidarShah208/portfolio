@@ -31,7 +31,7 @@ function Services() {
                 <i onClick={()=>toggleTab(0)} className="uil uil-times services_modal-close"></i>
                  <h3 className="services_modal-title">Custom Development</h3>
                  <p className="services_model-description">
-                    Services with more than 2 year of experience. providing quality works to  clients and companies.
+                    Services with more than 1 year of experience. providing quality works to  clients and companies.
                  </p>
                  <ul className="services_model-services grid">
                  <li className="services_model-service"><i className="uil uil-check-circle services_modal-icon"></i>
@@ -71,7 +71,7 @@ function Services() {
                 <i onClick={()=>toggleTab(0)} className="uil uil-times services_modal-close"></i>
                  <h3 className="services_modal-title">Web  Design</h3>
                  <p className="services_model-description">
-                    Services with more than 2 year of experience. providing quality works to  clients and companies.
+                    Services with more than 1 year of experience. providing quality works to  clients and companies.
                  </p>
                  <ul className="services_model-services grid">
                  <li className="services_model-service"><i className="uil uil-check-circle services_modal-icon"></i>
@@ -109,7 +109,7 @@ function Services() {
                 <i onClick={()=>toggleTab(0)} className="uil uil-times services_modal-close"></i>
                  <h3 className="services_modal-title">Web Development</h3>
                  <p className="services_model-description">
-                    Services with more than 2 year of experience. providing quality works to  clients and companies.
+                    Services with more than 1 year of experience. providing quality works to  clients and companies.
                  </p>
                  <ul className="services_model-services grid">
                  <li className="services_model-service"><i className="uil uil-check-circle services_modal-icon"></i>

@@ -84,7 +84,7 @@ useEffect(() => {
                 onClick={() => handleLinkClick("#contact")}
                 className={activeNav === "#contact" ? "nav_link active-link" : "nav_link"}
               >
-                <i className="uil uil-message nav_i nav_icon"></i>Contect 
+                <i className="uil uil-message nav_i nav_icon"></i>Contact 
               </a>
             </li>
           </ul>

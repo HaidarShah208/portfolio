@@ -16,14 +16,14 @@ function Qualification() {
         <div className="qualification_container container">
             <div className="qualification_tabs">
                 <div className=
-                {toggleState===1?"qualification_button qualifiction_active button--flex":"qualification_button button--flex"}
+                {toggleState===1?"qualification_button qualification_active button--flex":"qualification_button button--flex"}
                 onClick={()=>toggleTab(1)}
                 >
                     <i className="uil uil-graduation-cap qualification_icon"></i>
                     Education
                 </div>
                 <div className=
-                {toggleState===2?"qualification_button qualifiction_active button--flex":"qualification_button button--flex"}
+                {toggleState===2?"qualification_button qualification_active button--flex":"qualification_button button--flex"}
                 onClick={()=>toggleTab(2)}
                 >
                 <i className="uil uil-briefcase-alt qualification_icon"></i>
@@ -56,7 +56,7 @@ function Qualification() {
                             <h3 className="qualification_title">Matric</h3>
                             <span className="qualification_subtitle">Islamia high school chiniot</span>
                             <div className="qualification_calendar">
-                                <i className="uil uil-calendar-alt"></i>2017
+                                <i className="uil uil-calendar-alt"></i> 2015-2017
                             </div>
                         </div>
                     </div>
@@ -66,7 +66,7 @@ function Qualification() {
                             <h3 className="qualification_title">ICS</h3>
                             <span className="qualification_subtitle">Goverment Collage Chiniot</span>
                             <div className="qualification_calendar">
-                                <i className="uil uil-calendar-alt"></i>2019
+                                <i className="uil uil-calendar-alt"></i> 2017-2019
                             </div>
                         </div>
                          <div>
@@ -85,7 +85,7 @@ function Qualification() {
                             <h3 className="qualification_title">BSCS</h3>
                             <span className="qualification_subtitle">Goverment Collage University Faislabad</span>
                             <div className="qualification_calendar">
-                                <i className="uil uil-calendar-alt"></i>2023 - present
+                                <i className="uil uil-calendar-alt"></i> 2019-2023
                             </div>
                         </div>
                     </div>
@@ -150,7 +150,6 @@ function Qualification() {
             </div>
         </div>
         </section>
-    
   )
 }
 

@@ -14,10 +14,29 @@
     color: var(--title-color);
     margin: 0 var(--mb-1);
     cursor: pointer;
+    padding-bottom: 0.5rem;
+    position: relative;
 }
 
 .qualification_button:hover {
     color: var(--title-color-dark);
+}
+
+.qualification_button::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: var(--title-color-dark);
+    transition: width 0.3s;
+    position: absolute;
+    bottom: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.qualification_active::after {
+    width: 80%;
 }
 
 .qualification_icon {
@@ -26,7 +45,7 @@
 }
 
 .qualification_active {
-    color: var(--title-color-dark)
+    color: var(--title-color-dark);
 }
 
 .qualification_sections {

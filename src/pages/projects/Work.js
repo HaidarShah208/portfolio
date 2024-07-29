@@ -5,20 +5,17 @@ import WorkItems from "./workItems";
 
 
 function Work() {
-  const [item,setItem]=useState({name:'all'})
+  const [item,setItem]=useState({name:'Javascirpt'})
   const [projects,setProjects]=useState([])
   const [active,setActive]=useState(0)
 
   useEffect(()=>{
-    if(item.name === 'all'){
-      setProjects(projectData)
-    }
-    else{
+ 
       const newProjects= projectData.filter((project)=>{
         return project.category === item.name
       })
       setProjects(newProjects)
-    }
+    
   },[item])
 
 

@@ -34,6 +34,26 @@
         color: var(--title-color);
         font-weight: var(--font-medium);
         transition: .3s;
+        position: relative;
+    }
+    
+    .nav_link::after {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 2px;
+        bottom: -5px;
+        left: 0;
+        background-color: var(--title-color-dark);
+        transition: width 1s;
+    }
+    
+    .nav_link:hover::after {
+        width: 100%;
+    }
+    
+    .active-link::after {
+        width: 100%;
     }
     
     .nav_icon,

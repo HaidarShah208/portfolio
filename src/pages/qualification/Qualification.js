@@ -11,7 +11,7 @@ function Qualification() {
 
        <section className="services section" id='portfolio'>
         <h2 className="section__title">Qualification</h2>
-        <span className="section__subtitle">My personal Journay</span>
+        <span className="section__subtitle">My personal Journey</span>
 
         <div className="qualification_container container">
             <div className="qualification_tabs">
@@ -35,7 +35,7 @@ function Qualification() {
                     <div className="qualification_data">
                         <div>
                             <h3 className="qualification_title">Middle</h3>
-                            <span className="qualification_subtitle">Islamia shcool chiniot</span>
+                            <span className="qualification_subtitle">Islamia Shcool Chiniot</span>
                             <div className="qualification_calendar">
                                 <i className="uil uil-calendar-alt"></i>2015
                             </div>
@@ -54,7 +54,7 @@ function Qualification() {
                          </div>
                         <div>
                             <h3 className="qualification_title">Matric</h3>
-                            <span className="qualification_subtitle">Islamia high school chiniot</span>
+                            <span className="qualification_subtitle">Islamia High School Chiniot</span>
                             <div className="qualification_calendar">
                                 <i className="uil uil-calendar-alt"></i> 2015-2017
                             </div>
@@ -64,7 +64,7 @@ function Qualification() {
                     <div className="qualification_data">
                         <div>
                             <h3 className="qualification_title">ICS</h3>
-                            <span className="qualification_subtitle">Goverment Collage Chiniot</span>
+                            <span className="qualification_subtitle">Government Collage Chiniot</span>
                             <div className="qualification_calendar">
                                 <i className="uil uil-calendar-alt"></i> 2017-2019
                             </div>
@@ -83,7 +83,7 @@ function Qualification() {
                          </div>
                         <div>
                             <h3 className="qualification_title">BSCS</h3>
-                            <span className="qualification_subtitle">Goverment Collage University Faislabad</span>
+                            <span className="qualification_subtitle">Government Collage University Faislabad</span>
                             <div className="qualification_calendar">
                                 <i className="uil uil-calendar-alt"></i> 2019-2023
                             </div>

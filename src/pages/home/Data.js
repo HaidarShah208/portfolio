@@ -1,6 +1,17 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 export default function Data() {
+  const [textIndex, setTextIndex] = useState(0);
+  const texts = ["I'm Web Developer", "I'm MERN Stack Developer", "I'm React-Native Developer"];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setTextIndex((prevIndex) => (prevIndex + 1) % texts.length);
+    }, 5000);  
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <>
       <div className="home_data">
@@ -56,7 +67,10 @@ export default function Data() {
             ></path>
           </svg>
         </h1>
-        <h3 className="home_subtitle">MERN Stack Developer</h3>
+        {/* <h3 className="home_subtitle">MERN Stack Developer</h3> */}
+        <div className="typewriter">
+          <span className="typewriter-text">{texts[textIndex]}</span>
+        </div>
         <p className="home_description">
           I'm MERN Stack Developer and now learning more in Python language.
         </p>

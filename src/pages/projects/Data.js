@@ -1,6 +1,7 @@
 import ecom from '../../assests/ecom.png'
 import ss from '../../assests/ss.png'
 import movie from '../../assests/movie.png'
+import book from '../../assests/book.png'
 import medicare from '../../assests/medicare.png'
 import recipe from '../../assests/recipe.png'
 import crud from '../../assests/crud.png'
@@ -8,13 +9,7 @@ import crud from '../../assests/crud.png'
 
 
 export const projectData=[
-    {
-        id:1,
-        img:'https://png.pngtree.com/png-clipart/20190520/original/pngtree-stopwatch-graphic-icon-design-template-png-image_3762239.jpg',
-        title:'Stop watch',
-        category:'Javascirpt',
-        link:'http://stop-watch-project.surge.sh'
-    },
+ 
     {
         id:2,
         img:'https://images.unsplash.com/photo-1614680376593-902f74cf0d41?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c3BvdGlmeXxlbnwwfHwwfHx8MA%3D%3D',
@@ -28,14 +23,6 @@ export const projectData=[
         title:'Js Protfolio',
         category:'Javascirpt',
         link:'http://js-portfolios.surge.sh'
-    },
-    {
-        id:8,
-        img:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThq0Q7KKw30KQzfVisD1fKkOSk1HeqtWK-Xx-AtfJ4hiV3WSSAagyyWDoTQBWFEe_faRY&usqp=CAU',
-        title:'Test Weather',
-        category:'React',
-        link:'https://test-wheather-psi.vercel.app/'
-        
     },
     {
         id:9,
@@ -77,20 +64,21 @@ export const projectData=[
         link:'https://final-ecomerce.web.app'
         
     },
-    {
-        id:14,
-        img:'https://res.cloudinary.com/practicaldev/image/fetch/s--HNkSUeW5--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/i/zx6lxoi50jsfxsr67yp9.jpg',
-        title:'CRUD',
-        category:'Firebase',
-        link:'https://database-8d140.web.app'
-        
-    },
+     
     {
         id:15,
         img:medicare,
         title:'Medicare Dashboard',
         category:'MongoDb',
         link:'https://medicare-nextjs-dashboard-zyx.vercel.app/'
+        
+    },
+    {
+        id:16,
+        img:book,
+        title:'Book Store',
+        category:'MongoDb',
+        link:'https://book-store-frontend-git-master-alis-projects-42054f63.vercel.app/'
         
     },
 ] 

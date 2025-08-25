@@ -95,7 +95,7 @@ function Qualification() {
                 <div  className={toggleState ===2 ? "qualification_content qualification_content-active":"qualification_content"}>
                     <div className="qualification_data">
                         <div>
-                            <h3 className="qualification_title">HTML,CSS,<br /> Bootstrap</h3>
+                            <h3 className="qualification_title">HTML,CSS,<br /> Tailwind CSS</h3>
                             <div className="qualification_calendar">
                                 <i className="uil uil-calendar-alt"></i>2019
                             </div>
@@ -113,7 +113,7 @@ function Qualification() {
                             <span className="qualification_line"></span>
                          </div>
                         <div>
-                            <h3 className="qualification_title">Javascirpt</h3>
+                            <h3 className="qualification_title">Javascirpt, <br/> Typescript</h3>
                             <div className="qualification_calendar">
                                 <i className="uil uil-calendar-alt"></i>2021
                             </div>
@@ -145,6 +145,43 @@ function Qualification() {
                                 <i className="uil uil-calendar-alt"></i>2023
                             </div>
                         </div>
+                    </div>
+                    <div className="qualification_data">
+                        <div>
+                            <h3 className="qualification_title">Nodejs,<br /> Rest Apis</h3>
+                            <div className="qualification_calendar">
+                                <i className="uil uil-calendar-alt"></i>2023
+                            </div>
+                        </div>
+                         <div>
+                            <span className="qualification_rounder"></span>
+                            <span className="qualification_line"></span>
+                         </div>
+                    </div>
+                    <div className="qualification_data">
+                        <div></div>
+                        <div>
+                            <span className="qualification_rounder"></span>
+                            <span className="qualification_line"></span>
+                         </div>
+                        <div>
+                            <h3 className="qualification_title">Supabase,<br/>Postgresql</h3>
+                            <div className="qualification_calendar">
+                                <i className="uil uil-calendar-alt"></i>2024
+                            </div>
+                        </div>
+                    </div>
+                    <div className="qualification_data">
+                        <div>
+                            <h3 className="qualification_title">Fast Apis,<br /> RAG</h3>
+                            <div className="qualification_calendar">
+                                <i className="uil uil-calendar-alt"></i>2025
+                            </div>
+                        </div>
+                         <div>
+                            <span className="qualification_rounder"></span>
+                            <span className="qualification_line"></span>
+                         </div>
                     </div>
                 </div>
             </div>

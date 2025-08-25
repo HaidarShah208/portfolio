@@ -11,7 +11,7 @@ function FrontEnd() {
                     <div className="skills_data">
                     <i class='bx bx-badge-check' ></i>
                 <div>
-                <h3 className="skills_name">HTML</h3>
+                <h3 className="skills_name">Next.js</h3>
                     <span className="skills_level">Advanced</span>
                 </div>
                     </div>
@@ -50,7 +50,7 @@ function FrontEnd() {
                     <div className="skills_data">
                     <i class='bx bx-badge-check' ></i>
                 <div>
-                <h3 className="skills_name">Scss</h3>
+                <h3 className="skills_name">Tailwind CSS</h3>
                     <span className="skills_level">Advanced</span>
                 </div>
                     </div>

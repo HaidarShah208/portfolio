@@ -43,17 +43,17 @@ function About() {
       <h2 className="section__title">About Me</h2>
       <span className="section__subtitle">Intorduction</span>
 
-      <div className="about__container container grid">
+      <div className="about__container container md:flex md:flex-row flex-col ">
       <motion.img
           src={profile}
-          alt=""
-          className="about__img"
+          alt="Profile"
+          className="mx-auto h-auto md:mb-0 mb-4 w-full md:max-w-[85%] shrink-0 rounded-2xl object-cover sm:w-60 md:mx-0 md:w-[37%] lg:max-w-[380px]"
           initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.2 }}
         />
 
         <div className="about__data md:ms-5">
           <Info />
-          <p className="about__description">
+          <p className="about__description lg:text-sm text-xs mb-4 lg:mb-20">
           I build high-performance web applications from concept to deployment, handling everything from intuitive frontend interfaces to scalable backend systems, databases, APIs, and cloud deployment. Alongside full-stack development, I develop AI-powered applications using Python, FastAPI, Retrieval-Augmented Generation (RAG), LLM APIs, and workflow automation to create intelligent, production-ready solutions.
           </p>
           <a download="" className="button button--flex" href={CV}>

@@ -3,18 +3,6 @@
     align-items: center;
 }
 
-.about__img {
-    border-radius: 1rem;
-    width: 37%;
-    height: 0%;
-}
-
-.about_info {
-    grid-template-columns: repeat(3, 210px);
-    gap: 1.5rem;
-    margin-bottom: var(--mb-3);
-}
-
 .about_box {
     background-color: var(--container-color);
     border: 1px solid rgba(0, 0, 0, 0.1);
@@ -38,9 +26,7 @@
     font-size: var(--tiny-font-size);
 }
 
-.about__description {
-    margin-bottom: 6rem;
-}
+
 
 @media screen and (max-width: 992px) {
     .about_box {
@@ -50,24 +36,10 @@
     .about__data {
         text-align: center;
     }
-
-    .about_info {
-        justify-content: center;
-    }
 }
 
 @media screen and (max-width: 576px) {
-    .about_info {
-        grid-template-columns: repeat(3, 1fr);
-    }
-
     .about__description {
         padding: 0;
-    }
-}
-
-@media screen and (max-width: 350px) {
-    .about_info {
-        grid-template-columns: repeat(2, 1fr);
     }
 }

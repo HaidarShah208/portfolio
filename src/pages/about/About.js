@@ -1,4 +1,4 @@
-import React,{useState,useEffect} from "react";
+import React,{useState,useEffect,useCallback} from "react";
 import profile from "../../assests/new.png";
 import "./About.css";
 import Info from "./Info";
@@ -9,8 +9,7 @@ function About() {
   const controls = useAnimation();
   const [animated, setAnimated] = useState(false);
 
-  // Function to handle the scroll animation
-  const handleScroll = () => {
+  const handleScroll = useCallback(() => {
     const offset = window.scrollY;
     const windowHeight = window.innerHeight;
 
@@ -23,17 +22,15 @@ function About() {
         transition: { duration: 1.2 },
       });
     }
-  };
+  }, [animated, controls]);
 
-  // Add a scroll event listener when the component mounts
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
 
-    // Cleanup the event listener when the component unmounts
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
-  }, []);
+  }, [handleScroll]);
   return (
     <motion.section
       className="about section"

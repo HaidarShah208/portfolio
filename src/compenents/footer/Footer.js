@@ -16,13 +16,13 @@ function Footer() {
         </ul>
 
         <div className="footer_socials">
-        <a href="https://www.facebook.com/profile.php?id=100051807652228&mibextid=ZbWKwL" className="footer_social-link" target='_blank'>
+        <a href="https://www.facebook.com/profile.php?id=100051807652228&mibextid=ZbWKwL" className="footer_social-link" target="_blank" rel="noreferrer">
                 <i className="bx bxl-facebook"></i>
             </a>
-            <a href="https://x.com/alihaider2080?t=U5S2mwFna4JvVNcE_JXbMg&s=08" className="footer_social-link" target='_blank'>
+            <a href="https://x.com/alihaider2080?t=U5S2mwFna4JvVNcE_JXbMg&s=08" className="footer_social-link" target="_blank" rel="noreferrer">
                 <i className="bx bxl-twitter"></i>
             </a>
-            <a href="https://www.linkedin.com/in/ali-haidar-5181a5276/" className="footer_social-link" target='_blank'>
+            <a href="https://www.linkedin.com/in/ali-haidar-5181a5276/" className="footer_social-link" target="_blank" rel="noreferrer">
             <i className="bx bxl-linkedin"></i>
             
             </a>

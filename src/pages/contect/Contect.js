@@ -1,4 +1,4 @@
-import React,{useEffect} from 'react'
+import React,{useEffect,useCallback} from 'react'
 import './contect.css'
 import { useRef } from 'react';
 import emailjs from '@emailjs/browser';
@@ -24,23 +24,21 @@ function Contect() {
     };
 
 
-     // Function to handle the scroll animation
-  const handleScroll = () => {
+  const handleScroll = useCallback(() => {
     const contactSection = document.querySelector('#contact');
+    if (!contactSection) return;
     const contactSectionOffset = contactSection.offsetTop - window.innerHeight;
     if (window.scrollY > contactSectionOffset) {
       controls.start({ opacity: 1, y: 0, transition: { duration: 0.7 } });
     }
-  };
+  }, [controls]);
 
-  // Add a scroll event listener when the component mounts
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
-    // Cleanup the event listener when the component unmounts
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
-  }, []);
+  }, [handleScroll]);
   return (
     <>
          <motion.section className="contact section" id="contact" initial={{ opacity: 0, y: 50 }} animate={controls}>

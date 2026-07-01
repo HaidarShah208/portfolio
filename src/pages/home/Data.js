@@ -1,13 +1,18 @@
 import React, { useEffect, useState } from "react";
 
+const TYPEWRITER_TEXTS = [
+  "I'm Web Developer",
+  "I'm MERN Stack Developer",
+  "I'm Full Stack Developer",
+];
+
 export default function Data() {
   const [textIndex, setTextIndex] = useState(0);
-  const texts = ["I'm Web Developer", "I'm MERN Stack Developer", "I'm Full Stack Developer"];
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setTextIndex((prevIndex) => (prevIndex + 1) % texts.length);
-    }, 5000);  
+      setTextIndex((prevIndex) => (prevIndex + 1) % TYPEWRITER_TEXTS.length);
+    }, 5000);
 
     return () => clearInterval(interval);
   }, []);
@@ -19,7 +24,7 @@ export default function Data() {
         
         </h1>
         <div className="typewriter">
-          <span className="typewriter-text">{texts[textIndex]}</span>
+          <span className="typewriter-text">{TYPEWRITER_TEXTS[textIndex]}</span>
         </div>
         <p className="home_description max-w-none w-full">
         I'm a Full Stack & AI Developer passionate about building scalable web applications and intelligent AI-powered solutions. I specialize in modern JavaScript technologies including React, Next.js, Node.js, TypeScript, PostgreSQL, and Python, while continuously expanding my expertise in AI automation, LLM integration, and backend architecture.

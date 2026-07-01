@@ -51,7 +51,7 @@ function About() {
           initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.2 }}
         />
 
-        <div className="about__data">
+        <div className="about__data md:ms-5">
           <Info />
           <p className="about__description">
           I build high-performance web applications from concept to deployment, handling everything from intuitive frontend interfaces to scalable backend systems, databases, APIs, and cloud deployment. Alongside full-stack development, I develop AI-powered applications using Python, FastAPI, Retrieval-Augmented Generation (RAG), LLM APIs, and workflow automation to create intelligent, production-ready solutions.

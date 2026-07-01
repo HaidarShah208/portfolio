@@ -4,15 +4,15 @@
 }
 
 .about__img {
-    border-radius: 1.5rem;
-    width: 40%;
-    height: 40%;
+    border-radius: 1rem;
+    width: 37%;
+    height: 0%;
 }
 
 .about_info {
     grid-template-columns: repeat(3, 210px);
     gap: 1.5rem;
-    margin-bottom: var(--mb-2);
+    margin-bottom: var(--mb-3);
 }
 
 .about_box {

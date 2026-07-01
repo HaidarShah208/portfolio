@@ -3,7 +3,7 @@ import React from 'react'
 function Info() {
   return (
     <div>
-      <div className="about_info grid">
+      <div className="about_info grid ">
         <div className="about_box">
         <i class='bx bx-award about-icon' ></i>
           <h3 className="about_title">Experience</h3>

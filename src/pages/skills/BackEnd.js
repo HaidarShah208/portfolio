@@ -11,21 +11,21 @@ function BackEnd() {
                     <div className="skills_data">
                     <i class='bx bx-badge-check' ></i>
                 <div>
-                <h3 className="skills_name">Firebase</h3>
+                <h3 className="skills_name">Node.js</h3>
                     <span className="skills_level">Advance</span>
                 </div>
                     </div>
                     <div className="skills_data">
                     <i class='bx bx-badge-check' ></i>
                 <div>
-                <h3 className="skills_name">Node.js</h3>
-                    <span className="skills_level">Basic</span>
+                <h3 className="skills_name">Nest.js</h3>
+                    <span className="skills_level">Advance</span>
                 </div>
                     </div>
                     <div className="skills_data">
                     <i class='bx bx-badge-check' ></i>
                 <div>
-                <h3 className="skills_name">Mongo Db</h3>
+                <h3 className="skills_name">Python</h3>
                     <span className="skills_level">Advance</span>
                 </div>
                     </div>
@@ -36,21 +36,21 @@ function BackEnd() {
                     <i class='bx bx-badge-check' ></i>
                 <div>
                 <h3 className="skills_name">Express.js</h3>
-                    <span className="skills_level">Basic</span>
+                    <span className="skills_level">Advance</span>
                 </div>
                     </div>
                     <div className="skills_data">
                     <i class='bx bx-badge-check' ></i>
                 <div>
                 <h3 className="skills_name">C++</h3>
-                    <span className="skills_level">Intermadiate</span>
+                    <span className="skills_level">Advance</span>
                 </div>
                     </div>
                     <div className="skills_data">
                     <i class='bx bx-badge-check' ></i>
                 <div>
-                <h3 className="skills_name">Sql</h3>
-                    <span className="skills_level">Basic</span>
+                <h3 className="skills_name">Fast Api's</h3>
+                    <span className="skills_level">Advance</span>
                 </div>
                     </div>
                 

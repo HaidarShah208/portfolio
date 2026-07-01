@@ -54,7 +54,7 @@ function About() {
         <div className="about__data">
           <Info />
           <p className="about__description">
-          Meet the MERN stack developer – who creates awesome things on the internet! MERN stands for MongoDB, Express.js, React, and Node.js – it's like their toolkit.
+          I build high-performance web applications from concept to deployment, handling everything from intuitive frontend interfaces to scalable backend systems, databases, APIs, and cloud deployment. Alongside full-stack development, I develop AI-powered applications using Python, FastAPI, Retrieval-Augmented Generation (RAG), LLM APIs, and workflow automation to create intelligent, production-ready solutions.
           </p>
           <a download="" className="button button--flex" href={CV}>
             Download CV

@@ -54,7 +54,7 @@
 /* Responsive typography */
 
 @media screen and (max-width: 992px) {
-     :root {
+    :root {
         --big-font-size: 2.75rem;
         --h1-font-size: 1.5rem;
         --h2-font-size: 1.25rem;
@@ -204,9 +204,11 @@ img {
     :root {
         --container-width: 92%;
     }
+
     .button {
         padding: 1rem 1.75rem;
     }
+
     .button__icon {
         width: 22px;
         height: 22px;
@@ -220,12 +222,15 @@ img {
     :root {
         --container-width: 94%;
     }
+
     body {
         margin: 0 0 var(--header-height) 0;
     }
+
     .section {
         padding: 2rem 0 4rem;
     }
+
     .section_subtitle {
         margin-bottom: var(--mb-3);
     }
@@ -242,7 +247,7 @@ img {
 /* For small devices */
 
 @media screen and (max-width: 350px) {
-     :root {
+    :root {
         --big-font-size: 2.25rem;
         --container-width: 98%;
     }

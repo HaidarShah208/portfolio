@@ -13,8 +13,7 @@ export default function Data() {
   }, []);
 
   return (
-    <>
-      <div className="home_data">
+    <div className="home_data w-full">
         <h1 className="home_title">
           Ali Haidar
           <svg
@@ -71,7 +70,7 @@ export default function Data() {
         <div className="typewriter">
           <span className="typewriter-text">{texts[textIndex]}</span>
         </div>
-        <p className="home_description">
+        <p className="home_description max-w-none w-full">
         I'm a Full Stack & AI Developer passionate about building scalable web applications and intelligent AI-powered solutions. I specialize in modern JavaScript technologies including React, Next.js, Node.js, TypeScript, PostgreSQL, and Python, while continuously expanding my expertise in AI automation, LLM integration, and backend architecture.
         </p>
         <a href="https://wa.me/923107580073" className="button button--flex">
@@ -95,6 +94,5 @@ export default function Data() {
           </svg>
         </a>
       </div>
-    </>
   );
 }

@@ -1,5 +1,5 @@
 .qualification_container {
-    max-width: 768px;
+    max-width: min(56rem, 100%);
 }
 
 .qualification_tabs {

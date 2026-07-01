@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 
 export default function Data() {
   const [textIndex, setTextIndex] = useState(0);
-  const texts = ["I'm Web Developer", "I'm MERN Stack Developer", "I'm React-Native Developer"];
+  const texts = ["I'm Web Developer", "I'm MERN Stack Developer", "I'm Full Stack Developer"];
 
   useEffect(() => {
     const interval = setInterval(() => {

@@ -44,6 +44,10 @@
     --z-tooltip: 10;
     --z-fixed: 100;
     --z-modal: 1000;
+    /*========== Fluid layout ==========*/
+    --container-width: 90%;
+    --container-max: 1320px;
+    --container-padding-x: clamp(1rem, 3vw, 2rem);
 }
 
 
@@ -140,9 +144,10 @@ img {
 /*=============== LAYOUT ===============*/
 
 .container {
-    max-width: 968px;
-    margin-left: auto;
-    margin-right: auto;
+    width: var(--container-width);
+    max-width: var(--container-max);
+    margin-inline: auto;
+    padding-inline: var(--container-padding-x);
 }
 
 .grid {
@@ -181,10 +186,23 @@ img {
 
 /* For large devices */
 
+@media screen and (min-width: 1600px) {
+    :root {
+        --container-width: 85%;
+        --container-max: 1520px;
+    }
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1599px) {
+    :root {
+        --container-width: 88%;
+        --container-max: 1400px;
+    }
+}
+
 @media screen and (max-width: 992px) {
-    .container {
-        margin-left: var(--mb-1-5);
-        margin-right: var(--mb-1-5);
+    :root {
+        --container-width: 92%;
     }
     .button {
         padding: 1rem 1.75rem;
@@ -199,6 +217,9 @@ img {
 /* For medium devices */
 
 @media screen and (max-width: 768px) {
+    :root {
+        --container-width: 94%;
+    }
     body {
         margin: 0 0 var(--header-height) 0;
     }
@@ -210,7 +231,12 @@ img {
     }
 }
 
-@media screen and (max-width: 576px) {}
+@media screen and (max-width: 576px) {
+    :root {
+        --container-width: 96%;
+        --container-padding-x: clamp(0.75rem, 4vw, 1.25rem);
+    }
+}
 
 
 /* For small devices */
@@ -218,9 +244,6 @@ img {
 @media screen and (max-width: 350px) {
      :root {
         --big-font-size: 2.25rem;
-    }
-    .container {
-        margin-left: var(--mb-1);
-        margin-right: var(--mb-1);
+        --container-width: 98%;
     }
 }

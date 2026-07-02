@@ -1,5 +1,6 @@
 import React, { useState,useEffect } from "react";
 import { Link } from "react-router-dom";
+import ProjectHeaderProgress from "../../pages/projects/ProjectHeaderProgress";
 import "./header.css";
 
 
@@ -94,6 +95,7 @@ useEffect(() => {
           <i className="uil uil-apps"></i>
         </div>
       </nav>
+      <ProjectHeaderProgress />
     </header>
   );
 }

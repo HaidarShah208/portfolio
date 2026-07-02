@@ -7,7 +7,7 @@
     flex-direction: column;
     justify-content: flex-start;
     overflow: hidden;
-    padding: calc(var(--header-height) + 0.75rem) 0 5rem;
+    padding: calc(var(--header-height) + 0.75rem) 0 2.5rem;
     gap: 1.25rem;
     box-sizing: border-box;
 }
@@ -46,26 +46,6 @@
 
 .work_pin_spacer {
     flex: 0 0 4rem;
-}
-
-/* Progress bar — shows horizontal scroll progress */
-.work_pin_progress {
-    position: absolute;
-    bottom: 2.5rem;
-    left: max(1.5rem, calc((100vw - var(--container-max)) / 2 + var(--container-padding-x)));
-    right: max(1.5rem, calc((100vw - var(--container-max)) / 2 + var(--container-padding-x)));
-    height: 2px;
-    background: rgba(0, 0, 0, 0.08);
-    border-radius: 999px;
-    overflow: hidden;
-}
-
-.work_pin_progress_bar {
-    height: 100%;
-    width: 100%;
-    background: var(--title-color);
-    transform-origin: left center;
-    transition: transform 0.08s linear;
 }
 
 .work_pin_hint {
@@ -244,7 +224,6 @@
         max-width: 100%;
     }
 
-    .work_pin_progress,
     .work_pin_hint,
     .work_pin_spacer {
         display: none;

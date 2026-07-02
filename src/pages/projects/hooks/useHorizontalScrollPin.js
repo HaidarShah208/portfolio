@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { useLenis } from "../../../components/smooth-scroll";
+import { useProjectScroll } from "../context/ProjectScrollContext";
 
 const MOBILE_BREAKPOINT = 768;
 
@@ -9,6 +10,7 @@ const MOBILE_BREAKPOINT = 768;
  */
 export function useHorizontalScrollPin(trackRef, enabled = true) {
   const lenis = useLenis();
+  const { setScrollState } = useProjectScroll();
   const sectionRef = useRef(null);
   const [progress, setProgress] = useState(0);
   const [isPinned, setIsPinned] = useState(false);
@@ -45,8 +47,18 @@ export function useHorizontalScrollPin(trackRef, enabled = true) {
 
     track.style.transform = `translate3d(${-p * maxX}px, 0, 0)`;
     setProgress(p);
-    setIsPinned(scrolled > 0 && scrolled < scrollable);
-  }, [trackRef, enabled, getScrollY]);
+
+    const isActive =
+      scrollable > 0 && clamped >= 0 && clamped <= scrollable;
+    setIsPinned(isActive && clamped > 0 && clamped < scrollable);
+    setScrollState({ progress: p, isActive });
+  }, [trackRef, enabled, getScrollY, setScrollState]);
+
+  useEffect(() => {
+    if (!enabled) {
+      setScrollState({ progress: 0, isActive: false });
+    }
+  }, [enabled, setScrollState]);
 
   useEffect(() => {
     if (!enabled) return undefined;
@@ -90,8 +102,9 @@ export function useHorizontalScrollPin(trackRef, enabled = true) {
       window.removeEventListener("resize", onResize);
       observer.disconnect();
       if (rafRef.current) cancelAnimationFrame(rafRef.current);
+      setScrollState({ progress: 0, isActive: false });
     };
-  }, [enabled, lenis, measure, updateScroll, trackRef]);
+  }, [enabled, lenis, measure, updateScroll, trackRef, setScrollState]);
 
   return { sectionRef, progress, isPinned };
 }

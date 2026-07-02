@@ -41,13 +41,6 @@ function Work() {
       <div className="work_pin_sticky">
         {header}
 
-        <div className="work_pin_progress" aria-hidden="true">
-          <div
-            className="work_pin_progress_bar"
-            style={{ transform: `scaleX(${Math.max(progress, 0.02)})` }}
-          />
-        </div>
-
         <div className="work_pin_viewport">
           <div ref={trackRef} className="work_pin_track">
             {projects.map((project, index) => (
@@ -59,12 +52,7 @@ function Work() {
           </div>
         </div>
 
-        {progress < 0.95 && (
-          <p className="work_pin_hint">
-            Scroll to explore
-            <span className="work_pin_hint_arrow">↓</span>
-          </p>
-        )}
+         
       </div>
     </div>
   );

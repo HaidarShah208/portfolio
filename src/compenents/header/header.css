@@ -6,6 +6,26 @@
         z-index: var(--z-fixed);
         background-color: var(--container-color);
     }
+
+    /* Projects horizontal scroll progress — sits on header bottom edge */
+    .project-header-progress {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background: rgba(0, 0, 0, 0.08);
+        overflow: hidden;
+        pointer-events: none;
+    }
+
+    .project-header-progress__bar {
+        height: 100%;
+        width: 100%;
+        background: var(--title-color);
+        transform-origin: left center;
+        transition: transform 0.08s linear;
+    }
     
     .nav {
         height: calc(var(--header-height) + 1.5rem);

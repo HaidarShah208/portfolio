@@ -36,9 +36,9 @@ function DotGlobe() {
       </bufferGeometry>
       <pointsMaterial
         size={0.022}
-        color="#000"
+        color="#000000"
         transparent
-        opacity={0.7}
+        opacity={0.45}
         depthWrite={false}
         depthTest={false}
         blending={THREE.AdditiveBlending}
@@ -52,10 +52,10 @@ function WireframeShell() {
     <mesh renderOrder={0}>
       <sphereGeometry args={[GLOBE_SHELL_RADIUS, 48, 48]} />
       <meshBasicMaterial
-        color="#0022"
+        color="#d4d4d4"
         wireframe
         transparent
-        opacity={0.18}
+        opacity={0.35}
         depthWrite={false}
         depthTest={false}
       />
@@ -65,29 +65,16 @@ function WireframeShell() {
 
 function CoreGlow() {
   return (
-    <>
-      <mesh renderOrder={0}>
-        <sphereGeometry args={[GLOBE_SHELL_RADIUS * 0.94, 32, 32]} />
-        <meshBasicMaterial
-          color="#0B1224"
-          transparent
-          opacity={0.35}
-          depthWrite={false}
-          depthTest={false}
-        />
-      </mesh>
-      <mesh renderOrder={0}>
-        <sphereGeometry args={[GLOBE_SHELL_RADIUS * 0.98, 32, 32]} />
-        <meshBasicMaterial
-          color="#7C3AED"
-          transparent
-          opacity={0.08}
-          blending={THREE.AdditiveBlending}
-          depthWrite={false}
-          depthTest={false}
-        />
-      </mesh>
-    </>
+    <mesh renderOrder={0}>
+      <sphereGeometry args={[GLOBE_SHELL_RADIUS * 0.96, 32, 32]} />
+      <meshBasicMaterial
+        color="#f5f5f5"
+        transparent
+        opacity={0.25}
+        depthWrite={false}
+        depthTest={false}
+      />
+    </mesh>
   );
 }
 
@@ -109,9 +96,9 @@ function Globe({
 
   return (
     <>
-      <ambientLight intensity={0.5} />
-      <pointLight position={[4, 4, 4]} intensity={1.2} color="#60A5FA" />
-      <pointLight position={[-4, -2, -3]} intensity={0.8} color="#7C3AED" />
+      <ambientLight intensity={0.7} />
+      <pointLight position={[4, 4, 4]} intensity={1} color="#ffffff" />
+      <pointLight position={[-4, -2, -3]} intensity={0.5} color="#e5e5e5" />
 
       {/* Globe + skills rotate together */}
       <group ref={orbitRef}>

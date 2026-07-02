@@ -57,7 +57,7 @@ const rawSkills = [
   {
     id: "nestjs",
     name: "NestJS",
-    icon: `${ICON_BASE}/nestjs/nestjs-plain.svg`,
+    icon: `${ICON_BASE}/nestjs/nestjs-original.svg`,
     level: "Advanced",
     years: "2+ years",
     description:

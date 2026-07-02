@@ -25,7 +25,7 @@ function SkillInfoPanel({ skill, onClose, reducedMotion }) {
           <motion.button
             type="button"
             aria-label="Close skill details"
-            className="fixed inset-0 z-[90] bg-black/60 backdrop-blur-sm"
+            className="fixed inset-0 z-[90] bg-black/50"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -37,7 +37,7 @@ function SkillInfoPanel({ skill, onClose, reducedMotion }) {
             role="dialog"
             aria-modal="true"
             aria-labelledby="skill-panel-title"
-            className="fixed z-[100] w-full max-h-[85vh] overflow-y-auto border border-white/15 bg-[rgba(10,14,24,0.92)] p-6 shadow-[0_0_50px_rgba(124,58,237,0.25)] backdrop-blur-xl md:max-w-md md:rounded-3xl bottom-0 left-0 right-0 rounded-t-3xl md:bottom-auto md:left-auto md:right-8 md:top-1/2 md:-translate-y-1/2"
+            className="fixed z-[100] w-full max-h-[85vh] overflow-y-auto border border-neutral-200 bg-white p-6 shadow-lg md:max-w-md md:rounded-3xl bottom-0 left-0 right-0 rounded-t-3xl md:bottom-auto md:left-auto md:right-8 md:top-1/2 md:-translate-y-1/2"
             initial={reducedMotion ? false : { opacity: 0, y: 40, scale: 0.96 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={reducedMotion ? undefined : { opacity: 0, y: 30, scale: 0.96 }}
@@ -45,7 +45,7 @@ function SkillInfoPanel({ skill, onClose, reducedMotion }) {
           >
             <div className="mb-5 flex items-start justify-between gap-4">
               <div className="flex items-center gap-3">
-                <span className="flex h-12 w-12 items-center justify-center rounded-2xl border border-white/10 bg-white/10 p-2">
+                <span className="flex h-10 w-10 items-center justify-center rounded-xl border border-neutral-200 bg-neutral-50 p-1.5">
                   <img
                     src={skill.icon}
                     alt=""
@@ -55,11 +55,11 @@ function SkillInfoPanel({ skill, onClose, reducedMotion }) {
                 <div>
                   <h3
                     id="skill-panel-title"
-                    className="text-lg font-semibold text-white"
+                    className="text-lg font-semibold text-neutral-900"
                   >
                     {skill.name}
                   </h3>
-                  <p className="text-sm font-medium text-violet-300">
+                  <p className="text-sm font-medium text-neutral-500">
                     {skill.level}
                   </p>
                 </div>
@@ -67,33 +67,33 @@ function SkillInfoPanel({ skill, onClose, reducedMotion }) {
               <button
                 type="button"
                 onClick={onClose}
-                className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-sm text-white/70 transition hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-violet-400"
+                className="rounded-full border border-neutral-200 bg-neutral-50 px-3 py-1 text-sm text-neutral-600 transition hover:bg-neutral-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-400"
                 aria-label="Close panel"
               >
                 ✕
               </button>
             </div>
 
-            <p className="mb-2 text-xs uppercase tracking-[0.2em] text-cyan-300/80">
+            <p className="mb-2 text-xs uppercase tracking-[0.2em] text-neutral-400">
               Experience
             </p>
-            <p className="mb-4 text-sm text-white/75">{skill.years}</p>
+            <p className="mb-4 text-sm text-neutral-600">{skill.years}</p>
 
-            <p className="mb-2 text-xs uppercase tracking-[0.2em] text-cyan-300/80">
+            <p className="mb-2 text-xs uppercase tracking-[0.2em] text-neutral-400">
               Overview
             </p>
-            <p className="mb-5 text-sm leading-relaxed text-white/80">
+            <p className="mb-5 text-sm leading-relaxed text-neutral-600">
               {skill.description}
             </p>
 
-            <p className="mb-3 text-xs uppercase tracking-[0.2em] text-cyan-300/80">
+            <p className="mb-3 text-xs uppercase tracking-[0.2em] text-neutral-400">
               Related Technologies
             </p>
             <div className="flex flex-wrap gap-2">
               {skill.related.map((tech) => (
                 <span
                   key={tech}
-                  className="rounded-full border border-white/10 bg-white/[0.08] px-3 py-1 text-xs font-medium text-white/80"
+                  className="rounded-full border border-neutral-200 bg-neutral-50 px-3 py-1 text-xs font-medium text-neutral-600"
                 >
                   {tech}
                 </span>

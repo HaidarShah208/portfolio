@@ -49,10 +49,10 @@ function SkillNode({ skill, isSelected, isHovered, onSelect, onHover }) {
             -skill.normal.z * 0.28,
           ],
         ]}
-        color={active ? "#A78BFA" : "#60A5FA"}
-        lineWidth={active ? 1.4 : 0.7}
+        color={active ? "#404040" : "#a3a3a3"}
+        lineWidth={active ? 1.2 : 0.6}
         transparent
-        opacity={active ? 0.65 : 0.22}
+        opacity={active ? 0.5 : 0.2}
         depthWrite={false}
         renderOrder={19}
       />
@@ -62,7 +62,7 @@ function SkillNode({ skill, isSelected, isHovered, onSelect, onHover }) {
         transform
         sprite
         occlude={false}
-        distanceFactor={9}
+        distanceFactor={13}
         zIndexRange={[300, 0]}
         style={{ pointerEvents: "auto" }}
       >
@@ -75,26 +75,27 @@ function SkillNode({ skill, isSelected, isHovered, onSelect, onHover }) {
             onMouseLeave={() => onHover(null)}
             onFocus={() => onHover(skill.id)}
             onBlur={() => onHover(null)}
-            className={`flex min-w-[92px] flex-col items-center gap-1.5 rounded-2xl border px-3 py-2.5 text-center outline-none backdrop-blur-md transition-[transform,box-shadow,border-color] duration-300 ease-out focus-visible:ring-2 focus-visible:ring-violet-400/80 focus-visible:ring-offset-2 focus-visible:ring-offset-[#070B14] ${
+            className={`flex min-w-[60px] flex-col items-center gap-0.5 rounded-lg border border-neutral-200  px-1.5 py-1.5 text-center outline-none transition-[transform,border-color] duration-300 ease-out focus-visible:ring-2 focus-visible:ring-neutral-400 focus-visible:ring-offset-2 focus-visible:ring-offset-white ${
               active
-                ? "scale-105 border-violet-400/50 bg-white/12 shadow-[0_0_28px_rgba(124,58,237,0.45)]"
-                : "border-white/15 bg-white/[0.08] shadow-[0_0_12px_rgba(96,165,250,0.15)] hover:scale-105 hover:border-cyan-400/35"
+                ? "scale-105 border-neutral-400"
+                : "hover:scale-105 hover:border-neutral-300"
             }`}
             style={{
               WebkitFontSmoothing: "antialiased",
               transform: "translateZ(0)",
             }}
           >
-            <span className="flex h-9 w-9 items-center justify-center rounded-full bg-white/10 p-1.5">
+            <span className="flex h-3.5 w-3.5 items-center justify-center rounded-full bg-white p-0.5">
               <img
                 src={skill.icon}
                 alt=""
-                className="h-full w-full object-contain"
+                className="h-6 w-6 "
                 loading="lazy"
                 draggable={false}
+                style={{width:'10px',height:'10px'}}
               />
             </span>
-            <span className="whitespace-nowrap text-[11px] font-semibold tracking-wide text-white/90">
+            <span className="whitespace-nowrap text-[3px] md:text-[4px] font-medium tracking-wide text-neutral-600">
               {skill.name}
             </span>
           </button>

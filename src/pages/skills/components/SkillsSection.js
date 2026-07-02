@@ -48,7 +48,7 @@ function SkillsSection() {
           >
             Skills
           </h2>
-          <p className="mb-3 text-xs font-semibold uppercase tracking-[0.35em]">
+          <p className="mb-3 text-xs font-semibold uppercase tracking-[0.35em] text-neutral-500">
             Technical Universe
           </p>         
         </motion.div>

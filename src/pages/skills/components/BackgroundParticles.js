@@ -13,15 +13,15 @@ const PARTICLES = Array.from({ length: 28 }, (_, i) => ({
 function BackgroundParticles({ reducedMotion }) {
   return (
     <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_rgba(124,58,237,0.18),_transparent_55%)]" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,_rgba(6,182,212,0.12),_transparent_50%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_rgba(0,0,0,0.04),_transparent_55%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,_rgba(0,0,0,0.03),_transparent_50%)]" />
 
     
 
       {PARTICLES.map((particle) => (
         <motion.span
           key={particle.id}
-          className="absolute rounded-full bg-white/30"
+          className="absolute rounded-full bg-black/10"
           style={{
             left: particle.left,
             top: particle.top,

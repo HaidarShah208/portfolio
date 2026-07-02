@@ -11,10 +11,13 @@ import Footer from "./compenents/footer/Footer";
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css'
 import Project from "./pages/projects/Project";
+import CustomCursor from "./components/custom-cursor";
+
 function App() {
   return (
     <BrowserRouter>
       <>
+        <CustomCursor />
         <Header />
         <Routes>
           <Route path="/" element={

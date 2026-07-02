@@ -1,0 +1,35 @@
+/* Hide native cursor only when the custom cursor is active (desktop) */
+.custom-cursor-active,
+.custom-cursor-active * {
+  cursor: none !important;
+}
+
+.custom-cursor {
+  pointer-events: none;
+}
+
+/* Ring: 20px outlined circle — premium agency style */
+.custom-cursor__ring {
+  width: 20px;
+  height: 20px;
+  transition: opacity 0.25s ease;
+}
+
+/* Trail: subtle liquid blob behind the ring */
+.custom-cursor__trail {
+  width: 10px;
+  height: 10px;
+  filter: blur(3px);
+  transition: opacity 0.15s ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .custom-cursor-active,
+  .custom-cursor-active * {
+    cursor: auto !important;
+  }
+
+  .custom-cursor {
+    display: none;
+  }
+}

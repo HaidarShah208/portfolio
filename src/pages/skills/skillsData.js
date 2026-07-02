@@ -134,16 +134,7 @@ const rawSkills = [
       "Containerized deployments, multi-stage builds, and reproducible environments.",
     related: ["AWS", "CI/CD", "Node.js", "PostgreSQL"],
   },
-  {
-    id: "aws",
-    name: "AWS",
-    icon: `${ICON_BASE}/amazonwebservices/amazonwebservices-plain-wordmark.svg`,
-    level: "Intermediate",
-    years: "1+ years",
-    description:
-      "Cloud hosting, storage, and deployment workflows for production applications.",
-    related: ["Docker", "CI/CD", "Node.js", "PostgreSQL"],
-  },
+  
   {
     id: "tailwind",
     name: "Tailwind CSS",
@@ -203,6 +194,60 @@ const rawSkills = [
     description:
       "Automated testing, build pipelines, and reliable deployment workflows.",
     related: ["GitHub", "Docker", "AWS", "Node.js"],
+  },
+  {
+    id: "openai",
+    name: "OpenAI API",
+    icon: `${ICON_BASE}/openai/openai-original.svg`,
+    level: "Advanced",
+    years: "1+ years",
+    description:
+      "Integrating GPT models, assistants, embeddings, and AI-powered workflows into production applications.",
+    related: ["Python", "FastAPI", "LangChain", "n8n"],
+  },
+  {
+    id: "langchain",
+    name: "LangChain",
+    icon: `${ICON_BASE}/langchain/langchain-original.svg`,
+    level: "Intermediate",
+    years: "1+ years",
+    description:
+      "Developing AI applications using chains, agents, memory, tools, and Retrieval-Augmented Generation (RAG).",
+    related: ["Python", "OpenAI API", "FastAPI", "PostgreSQL"],
+  },
+ 
+  {
+    id: "socketio",
+    name: "Socket.IO",
+    icon: `${ICON_BASE}/socketio/socketio-original.svg`,
+    level: "Intermediate",
+    years: "1+ years",
+    description:
+      "Building real-time applications including chat systems, notifications, and live data synchronization.",
+    related: ["Node.js", "Express.js", "NestJS", "React"],
+  },
+  {
+    id: "prisma",
+    name: "Prisma",
+    icon: `${ICON_BASE}/prisma/prisma-original.svg`,
+    level: "Intermediate",
+    years: "1+ years",
+    description:
+      "Type-safe database access, schema migrations, and modern ORM workflows for scalable applications.",
+    related: ["PostgreSQL", "Node.js", "TypeScript", "NestJS"],
+  },
+ 
+ 
+ 
+  {
+    id: "jest",
+    name: "Jest",
+    icon: `${ICON_BASE}/jest/jest-plain.svg`,
+    level: "Intermediate",
+    years: "1+ years",
+    description:
+      "Writing unit and integration tests to ensure application reliability and maintainable codebases.",
+    related: ["React", "Node.js", "TypeScript", "NestJS"],
   },
 ];
 

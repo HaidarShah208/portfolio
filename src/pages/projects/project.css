@@ -5,25 +5,31 @@
     height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     overflow: hidden;
-    padding: calc(var(--header-height) + 0.5rem) 0 2rem;
-    gap: 1.5rem;
+    padding: calc(var(--header-height) + 0.75rem) 0 5rem;
+    gap: 1.25rem;
+    box-sizing: border-box;
 }
 
 .work__header {
     margin-bottom: 0;
     flex-shrink: 0;
 }
+
+.work_pin_viewport {
+    width: 100%;
+    flex: 1;
+    min-height: 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    padding-bottom: 0.5rem;
+}
 /* ========== Desktop: pinned horizontal scroll (scroll-jacking) ========== */
 .work_pin_section {
     position: relative;
     width: 100%;
-}
-
-.work_pin_viewport {
-    width: 100%;
-    overflow: hidden;
 }
 
 .work_pin_track {
@@ -123,7 +129,7 @@
 
 .work_img {
     width: 100%;
-    height: clamp(11rem, 22vw, 15rem);
+    height: clamp(8.5rem, 16vw, 11.5rem);
     object-fit: cover;
     border-radius: 0.875rem;
     transition: transform 0.5s ease;
@@ -138,6 +144,8 @@
     flex-direction: column;
     flex: 1;
     gap: 0.35rem;
+    min-height: 0;
+    padding-bottom: 0.25rem;
 }
 
 .work_category {

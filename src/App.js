@@ -12,9 +12,11 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css'
 import Project from "./pages/projects/Project";
 import CustomCursor from "./components/custom-cursor";
+import { LenisProvider } from "./components/smooth-scroll";
 
 function App() {
   return (
+    <LenisProvider>
     <BrowserRouter>
       <>
         <CustomCursor />
@@ -36,6 +38,7 @@ function App() {
       </>
       <ToastContainer/>
     </BrowserRouter>
+    </LenisProvider>
   );
 }
 

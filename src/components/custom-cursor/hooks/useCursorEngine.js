@@ -1,9 +1,9 @@
 import { useEffect, useRef } from "react";
 import { findInteractiveTarget } from "./useCursorHover";
 
-// Lerp factors — lower = more inertia (agency-style smooth lag)
-const RING_LERP = 0.14;
-const TRAIL_LERP = 0.07;
+// Lerp factors — higher = snappier follow (reduced lag)
+const RING_LERP = 0.32;
+const TRAIL_LERP = 0.16;
 
 // Trail stretch caps — keeps the effect subtle, not "gaming cursor"
 const MAX_STRETCH = 1.45;
@@ -112,7 +112,7 @@ export function useCursorEngine(enabled) {
 
       // Smooth scale transitions for hover / click (spring-like via lerp)
       s.targetScale = s.pressing ? 0.82 : s.hovering ? 1.65 : 1;
-      s.scale += (s.targetScale - s.scale) * 0.18;
+      s.scale += (s.targetScale - s.scale) * 0.28;
 
       if (ring) {
         ring.style.transform = `translate3d(${s.rx}px, ${s.ry}px, 0) translate(-50%, -50%) scale(${s.scale})`;

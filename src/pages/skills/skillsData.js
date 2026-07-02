@@ -198,7 +198,7 @@ const rawSkills = [
   {
     id: "openai",
     name: "OpenAI API",
-    icon: `${ICON_BASE}/openai/openai-original.svg`,
+    icon: `https://cdn.simpleicons.org/openai`,
     level: "Advanced",
     years: "1+ years",
     description:
@@ -208,7 +208,7 @@ const rawSkills = [
   {
     id: "langchain",
     name: "LangChain",
-    icon: `${ICON_BASE}/langchain/langchain-original.svg`,
+    icon: `https://cdn.simpleicons.org/langchain`,
     level: "Intermediate",
     years: "1+ years",
     description:

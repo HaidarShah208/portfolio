@@ -1,17 +1,24 @@
 import { useCallback, useEffect, useRef, useState } from "react";
+import { useLenis } from "../../../components/smooth-scroll";
 
 const MOBILE_BREAKPOINT = 768;
 
 /**
  * Pins the projects section while vertical scroll drives horizontal movement.
- * Same pattern used on premium portfolios (e.g. abdulbasit-005.vercel.app).
+ * Works with Lenis smooth scroll when available.
  */
 export function useHorizontalScrollPin(trackRef, enabled = true) {
+  const lenis = useLenis();
   const sectionRef = useRef(null);
   const [progress, setProgress] = useState(0);
   const [isPinned, setIsPinned] = useState(false);
   const rafRef = useRef(null);
   const metricsRef = useRef({ maxX: 0, pinHeight: 0 });
+
+  const getScrollY = useCallback(() => {
+    if (lenis && typeof lenis.scroll === "number") return lenis.scroll;
+    return window.scrollY;
+  }, [lenis]);
 
   const measure = useCallback(() => {
     const section = sectionRef.current;
@@ -32,14 +39,14 @@ export function useHorizontalScrollPin(trackRef, enabled = true) {
 
     const { maxX, pinHeight } = metricsRef.current;
     const scrollable = pinHeight - window.innerHeight;
-    const scrolled = window.scrollY - section.offsetTop;
+    const scrolled = getScrollY() - section.offsetTop;
     const clamped = Math.min(Math.max(scrolled, 0), scrollable);
     const p = scrollable > 0 ? clamped / scrollable : 0;
 
     track.style.transform = `translate3d(${-p * maxX}px, 0, 0)`;
     setProgress(p);
     setIsPinned(scrolled > 0 && scrolled < scrollable);
-  }, [trackRef, enabled]);
+  }, [trackRef, enabled, getScrollY]);
 
   useEffect(() => {
     if (!enabled) return undefined;
@@ -52,14 +59,21 @@ export function useHorizontalScrollPin(trackRef, enabled = true) {
       });
     };
 
+    const onResize = () => {
+      measure();
+      updateScroll();
+    };
+
     measure();
     updateScroll();
 
-    window.addEventListener("scroll", onScroll, { passive: true });
-    window.addEventListener("resize", () => {
-      measure();
-      updateScroll();
-    });
+    if (lenis) {
+      lenis.on("scroll", onScroll);
+    } else {
+      window.addEventListener("scroll", onScroll, { passive: true });
+    }
+
+    window.addEventListener("resize", onResize);
 
     const observer = new ResizeObserver(() => {
       measure();
@@ -68,13 +82,16 @@ export function useHorizontalScrollPin(trackRef, enabled = true) {
     if (trackRef.current) observer.observe(trackRef.current);
 
     return () => {
-      window.removeEventListener("scroll", onScroll);
-      window.removeEventListener("resize", measure);
-      window.removeEventListener("resize", updateScroll);
+      if (lenis) {
+        lenis.off("scroll", onScroll);
+      } else {
+        window.removeEventListener("scroll", onScroll);
+      }
+      window.removeEventListener("resize", onResize);
       observer.disconnect();
       if (rafRef.current) cancelAnimationFrame(rafRef.current);
     };
-  }, [enabled, measure, updateScroll, trackRef]);
+  }, [enabled, lenis, measure, updateScroll, trackRef]);
 
   return { sectionRef, progress, isPinned };
 }

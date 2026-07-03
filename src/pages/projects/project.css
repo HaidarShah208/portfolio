@@ -1,4 +1,11 @@
 /* ========== Projects header ========== */
+.work.section {
+    overflow-x: clip;
+    overflow-y: visible;
+    padding-top: 4rem;
+    padding-bottom: 0;
+}
+
 .work_pin_sticky {
     position: sticky;
     top: 0;
@@ -6,9 +13,10 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    overflow: hidden;
-    padding: calc(var(--header-height) + 0.75rem) 0 2.5rem;
-    gap: 1.25rem;
+    overflow-x: clip;
+    overflow-y: visible;
+    padding: calc(var(--header-height) + 0.35rem) 0 1.25rem;
+    gap: 0.5rem;
     box-sizing: border-box;
 }
 
@@ -17,19 +25,24 @@
     flex-shrink: 0;
 }
 
+.work_pin_sticky .section__subtitle {
+    margin-bottom: 0.5rem;
+}
+
 .work_pin_viewport {
     width: 100%;
     flex: 1;
     min-height: 0;
-    overflow: hidden;
+    overflow: visible;
     display: flex;
-    align-items: center;
-    padding-bottom: 0.5rem;
+    align-items: stretch;
+    padding: 0.35rem 0 0.5rem;
 }
 /* ========== Desktop: pinned horizontal scroll (scroll-jacking) ========== */
 .work_pin_section {
     position: relative;
     width: 100%;
+    overflow: visible;
 }
 
 .work_pin_track {
@@ -41,7 +54,16 @@
 }
 
 .work_pin_item {
-    flex: 0 0 clamp(20rem, 44vw, 30rem);
+    flex: 0 0 clamp(22rem, 40vw, 32rem);
+    display: flex;
+    align-items: stretch;
+    height: 100%;
+    min-height: 0;
+}
+
+.work_pin_item .work_card {
+    height: 100%;
+    min-height: clamp(26rem, calc(100vh - var(--header-height) - 11rem), 34rem);
 }
 
 .work_pin_spacer {
@@ -75,8 +97,8 @@
     position: relative;
     display: flex;
     flex-direction: column;
-    height: 100%;
-    min-height: clamp(22rem, 38vw, 26rem);
+    width: 100%;
+    height: clamp(28rem, calc(100vh - var(--header-height) - 10rem), 36rem);
     background-color: var(--container-color);
     border: 1px solid rgba(0, 0, 0, 0.08);
     padding: 1.25rem;
@@ -87,14 +109,14 @@
 
 .work_card:hover {
     box-shadow: 0 16px 40px rgba(0, 0, 0, 0.1);
-    transform: translateY(-4px);
+    transform: translateY(-3px);
 }
 
 .work_card_index {
     position: absolute;
     top: 1.5rem;
     left: 1.5rem;
-    z-index: 2;
+    z-index: 3;
     font-size: var(--smaller-font-size);
     font-weight: var(--font-semi-bold);
     letter-spacing: 0.08em;
@@ -103,6 +125,9 @@
 }
 
 .work_card_media {
+    position: relative;
+    flex: 1;
+    min-height: 0;
     overflow: hidden;
     border-radius: 0.875rem;
     margin-bottom: var(--mb-1);
@@ -110,23 +135,59 @@
 
 .work_img {
     width: 100%;
-    height: clamp(11rem, 22vw, 15.5rem);
+    height: 100%;
+    min-height: 16rem;
     object-fit: cover;
     border-radius: 0.875rem;
-    transition: transform 0.5s ease;
+    transition: transform 0.55s ease;
+}
+
+.work_card_overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.875rem;
+    background: rgba(0, 0, 0, 0.52);
+    opacity: 0;
+    transition: opacity 0.35s ease;
+}
+
+.work_card_overlay_text {
+    padding: 0.65rem 1.35rem;
+    border: 1px solid rgba(255, 255, 255, 0.85);
+    border-radius: 999px;
+    font-size: var(--small-font-size);
+    font-weight: var(--font-medium);
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #fff;
+    transform: translateY(10px);
+    opacity: 0;
+    transition: transform 0.35s ease, opacity 0.35s ease;
 }
 
 .work_card:hover .work_img {
-    transform: scale(1.04);
+    transform: scale(1.06);
+}
+
+.work_card:hover .work_card_overlay {
+    opacity: 1;
+}
+
+.work_card:hover .work_card_overlay_text {
+    transform: translateY(0);
+    opacity: 1;
 }
 
 .work_card_body {
     display: flex;
     flex-direction: column;
-    flex: 1;
+    flex-shrink: 0;
     gap: 0.35rem;
-    min-height: 0;
-    padding-bottom: 0.25rem;
+    padding-bottom: 0.15rem;
 }
 
 .work_category {
@@ -140,35 +201,20 @@
 .work_title {
     font-size: var(--h3-font-size);
     font-weight: var(--font-semi-bold);
-    margin-bottom: var(--mb-0-5);
+    margin-bottom: 0;
     color: var(--title-color);
 }
 
-.work_button {
-    margin-top: auto;
-    color: var(--text-color);
-    font-size: var(--small-font-size);
-    display: inline-flex;
-    column-gap: 0.25rem;
-    align-items: center;
-    width: fit-content;
-    transition: color 0.3s ease;
+.work_mobile_item {
+    flex: 0 0 min(85vw, 22rem);
+    scroll-snap-align: start;
 }
 
-.work_button:hover {
-    color: var(--title-color);
+.work_mobile_item .work_card {
+    height: clamp(26rem, 78vh, 32rem);
 }
 
-.work_button-icon {
-    font-size: 1rem;
-    transition: transform 0.35s ease;
-}
-
-.work_button:hover .work_button-icon {
-    transform: translateX(0.25rem);
-}
-
-/* ========== Mobile: native horizontal swipe (no scroll pin) ========== */
+/* ========== Mobile: native horizontal swipe ========== */
 .work_mobile {
     width: 100%;
     padding-bottom: var(--mb-2);
@@ -186,11 +232,6 @@
 
 .work_mobile_track::-webkit-scrollbar {
     display: none;
-}
-
-.work_mobile_item {
-    flex: 0 0 min(85vw, 20rem);
-    scroll-snap-align: start;
 }
 
 .work_mobile_hint {
@@ -235,6 +276,10 @@
     }
 
     .work_card:hover .work_img {
+        transform: none;
+    }
+
+    .work_card:hover .work_card_overlay_text {
         transform: none;
     }
 }

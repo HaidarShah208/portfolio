@@ -1,4 +1,5 @@
 import React from "react";
+import { JOURNEY_SUBTITLE } from "../journeyData";
 
 function JourneyHeader() {
   return (
@@ -6,10 +7,8 @@ function JourneyHeader() {
       <h2 id="journey-heading" className="section__title">
         My Journey
       </h2>
-      <span className="section__subtitle">
-        Every opportunity has shaped the way I build products today. From learning
-        the fundamentals to engineering scalable full-stack and AI-powered
-        solutions, each role represents a milestone in my growth.
+      <span className="section__subtitle !mb-0 max-w-xl mx-auto">
+        {JOURNEY_SUBTITLE}
       </span>
     </header>
   );

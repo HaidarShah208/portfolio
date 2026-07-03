@@ -1,6 +1,5 @@
 export const JOURNEY_SUBTITLE =
-  "Every opportunity has shaped the way I build products today. From learning the fundamentals to engineering scalable full-stack and AI-powered solutions, each role represents a milestone in my growth.";
-
+  "Key roles that shaped my path from web fundamentals to full-stack and AI development.";
 export const journeyCards = [
   {
     id: "techloset",

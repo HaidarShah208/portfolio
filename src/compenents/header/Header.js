@@ -18,7 +18,7 @@ const NAV_ITEMS = [
 
 function Header() {
   const lenis = useLenis();
-  const { activeNav, setActiveNav, pageProgress, inProjectsSection } = useScrollSpy();
+  const { activeNav, setActiveNav, pageProgress } = useScrollSpy();
   const [toggle, showMenu] = useState(false);
 
   useEffect(() => {
@@ -88,10 +88,7 @@ function Header() {
         </div>
       </nav>
 
-      <HeaderScrollProgress
-        progress={pageProgress}
-        visible={inProjectsSection}
-      />
+      <HeaderScrollProgress progress={pageProgress} />
     </header>
   );
 }

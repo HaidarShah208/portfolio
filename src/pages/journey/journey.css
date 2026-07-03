@@ -4,8 +4,6 @@
   width: 100%;
   --journey-sticky-top: calc(var(--header-height, 3rem) + 4.5rem);
   --journey-card-runway: calc(100vh - var(--journey-sticky-top));
-  /* Extra scroll after the last card fully stacks */
-  padding-bottom: var(--journey-card-runway);
 }
 
 /*
@@ -37,10 +35,13 @@
   margin-top: calc(2 * var(--journey-card-runway));
 }
 
+.journey.section {
+  padding-bottom: 2rem;
+}
+
 @media screen and (max-width: 767px) {
   .journey-stack {
     display: block;
-    padding-bottom: 0;
   }
 
   .journey-stack__card {
@@ -58,7 +59,6 @@
 @media (prefers-reduced-motion: reduce) {
   .journey-stack {
     display: block;
-    padding-bottom: 0;
   }
 
   .journey-stack__card {

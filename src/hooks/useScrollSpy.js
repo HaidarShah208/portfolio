@@ -12,13 +12,12 @@ export const NAV_SECTIONS = [
 ];
 
 /**
- * Tracks full-page scroll progress, active nav section, and projects-zone visibility.
+ * Tracks full-page scroll progress and active nav section.
  */
 export function useScrollSpy() {
   const lenis = useLenis();
   const [activeNav, setActiveNav] = useState("#home");
   const [pageProgress, setPageProgress] = useState(0);
-  const [inProjectsSection, setInProjectsSection] = useState(false);
 
   const getScrollY = useCallback(() => {
     if (lenis && typeof lenis.scroll === "number") return lenis.scroll;
@@ -49,18 +48,6 @@ export function useScrollSpy() {
 
       setActiveNav(current);
 
-      const projectsEl = document.getElementById("projects");
-      if (projectsEl) {
-        const top = projectsEl.offsetTop;
-        const bottom = top + projectsEl.offsetHeight;
-        const inSection =
-          scrollY + window.innerHeight * 0.25 >= top &&
-          scrollY <= bottom - window.innerHeight * 0.15;
-        setInProjectsSection(inSection);
-      } else {
-        setInProjectsSection(false);
-      }
-
       rafId = null;
     };
 
@@ -87,7 +74,7 @@ export function useScrollSpy() {
     };
   }, [lenis, getScrollY]);
 
-  return { activeNav, setActiveNav, pageProgress, inProjectsSection };
+  return { activeNav, setActiveNav, pageProgress };
 }
 
 export default useScrollSpy;

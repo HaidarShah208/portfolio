@@ -1,37 +1,52 @@
 .journey-stack {
-  position: relative;
+  display: grid;
+  grid-template-areas: "stack";
   width: 100%;
+  --journey-sticky-top: calc(var(--header-height, 3rem) + 4.5rem);
+  --journey-card-runway: calc(100vh - var(--journey-sticky-top));
+  /* Extra scroll after the last card fully stacks */
+  padding-bottom: var(--journey-card-runway);
 }
 
 /*
- * Sticky stack: each card sticks, the next slides over it on scroll.
- * Scroll runway lives on card 1 & 2 margins — not on the last card.
+ * Grid overlap stack: every card shares one cell, cumulative margin-top
+ * creates scroll runway so each next card slides over the previous one.
  */
 .journey-stack__card {
+  grid-area: stack;
+  align-self: start;
   position: sticky;
-  top: calc(var(--header-height, 3rem) + 4.5rem);
+  top: var(--journey-sticky-top);
   width: 100%;
-  margin-bottom: 85vh;
+}
+
+.journey-stack__card-inner {
   transform-origin: center top;
   will-change: transform, opacity;
 }
 
-.journey-stack__card:nth-last-child(2) {
-  margin-bottom: 95vh;
+.journey-stack__card:nth-child(1) {
+  margin-top: 0;
 }
 
-.journey-stack__card:last-child {
-  margin-bottom: 0;
+.journey-stack__card:nth-child(2) {
+  margin-top: calc(1 * var(--journey-card-runway));
+}
+
+.journey-stack__card:nth-child(3) {
+  margin-top: calc(2 * var(--journey-card-runway));
 }
 
 @media screen and (max-width: 767px) {
+  .journey-stack {
+    display: block;
+    padding-bottom: 0;
+  }
+
   .journey-stack__card {
     position: relative;
     top: auto;
-    margin-bottom: 1.5rem;
-  }
-
-  .journey-stack__card:nth-last-child(2) {
+    margin-top: 0;
     margin-bottom: 1.5rem;
   }
 
@@ -41,13 +56,15 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .journey-stack {
+    display: block;
+    padding-bottom: 0;
+  }
+
   .journey-stack__card {
     position: relative;
     top: auto;
-    margin-bottom: 1.5rem;
-  }
-
-  .journey-stack__card:nth-last-child(2) {
+    margin-top: 0;
     margin-bottom: 1.5rem;
   }
 }

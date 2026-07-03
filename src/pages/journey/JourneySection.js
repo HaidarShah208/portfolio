@@ -30,13 +30,17 @@ function JourneySection() {
           {journeyCards.map((card, index) => (
             <div
               key={card.id}
-              ref={(el) => {
-                cardRefs.current[index] = el;
-              }}
               className="journey-stack__card"
               style={{ zIndex: 10 + index }}
             >
-              <JourneyCard card={card} index={index} />
+              <div
+                ref={(el) => {
+                  cardRefs.current[index] = el;
+                }}
+                className="journey-stack__card-inner"
+              >
+                <JourneyCard card={card} index={index} />
+              </div>
             </div>
           ))}
         </div>

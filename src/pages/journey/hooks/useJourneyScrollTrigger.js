@@ -6,6 +6,13 @@ gsap.registerPlugin(ScrollTrigger);
 
 const MOBILE_BREAKPOINT = 768;
 
+function getStickyTopPx(stack) {
+  const card = stack.querySelector(".journey-stack__card");
+  if (!card) return 120;
+  const top = getComputedStyle(card).top;
+  return Number.parseFloat(top) || 120;
+}
+
 /**
  * Zunedaalim-style sticky stack: next card slides over previous (scale + fade back cards).
  * CSS sticky handles overlap; GSAP only scrubs the depth effect — no y transforms that break sticky.
@@ -47,31 +54,61 @@ export function useJourneyScrollTrigger({
         return;
       }
 
-      cards.forEach((card, index) => {
-        gsap.set(card, { transformOrigin: "center top", force3D: true });
+      const getOverlapRange = () => {
+        const stickyTopPx = getStickyTopPx(stack);
+        const overlapLeadPx = Math.round(window.innerHeight * 0.18);
+        return {
+          start: stickyTopPx + overlapLeadPx,
+          end: stickyTopPx,
+        };
+      };
 
-        // When the next card rises, shrink/fade the card underneath (exact stack feel)
+      cards.forEach((cardInner, index) => {
+        gsap.set(cardInner, {
+          scale: 1,
+          opacity: 1,
+          filter: "brightness(1)",
+          transformOrigin: "center top",
+          force3D: true,
+        });
+
         if (index < cards.length - 1) {
-          const nextCard = cards[index + 1];
-          const isFinalTransition = index === cards.length - 2;
+          const nextCard = cards[index + 1]?.parentElement;
+
+          if (!nextCard) return;
 
           ScrollTrigger.create({
             trigger: nextCard,
-            start: "top 98%",
-            end: isFinalTransition ? "top 8%" : "top 16%",
+            start: () => {
+              const { start } = getOverlapRange();
+              return `top ${start}px`;
+            },
+            end: () => {
+              const { end } = getOverlapRange();
+              return `top ${end}px`;
+            },
             scrub: 0.45,
+            invalidateOnRefresh: true,
             onUpdate: (self) => {
               const p = self.progress;
-              gsap.set(card, {
+              gsap.set(cardInner, {
                 scale: gsap.utils.interpolate(1, 0.96, p),
                 opacity: gsap.utils.interpolate(1, 0.88, p),
                 filter: `brightness(${gsap.utils.interpolate(1, 0.92, p)})`,
+              });
+            },
+            onLeaveBack: () => {
+              gsap.set(cardInner, {
+                scale: 1,
+                opacity: 1,
+                filter: "brightness(1)",
               });
             },
           });
         }
       });
 
+      ScrollTrigger.refresh();
     }, section);
 
     const handleResize = () => ScrollTrigger.refresh();

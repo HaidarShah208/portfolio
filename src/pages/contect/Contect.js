@@ -42,7 +42,7 @@ function Contect() {
   return (
     <>
          <motion.section className="contact section" id="contact" initial={{ opacity: 0, y: 50 }} animate={controls}>
-        <h2 className="section__title">Contact me</h2>
+        <h2 className="section__title mt-20 md:mt-28">Contact me</h2>
         <span className="section__subtitle">Get in touch</span>
         
         <div className="contact_container container grid">

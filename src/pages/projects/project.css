@@ -209,12 +209,13 @@
 }
 
 .work_mobile_item {
-    flex: 0 0 min(85vw, 22rem);
+    flex: 0 0 22rem;
     scroll-snap-align: start;
 }
 
 .work_mobile_item .work_card {
-    height: clamp(26rem, 78vh, 32rem);
+    height: 30rem;
+    min-height: 30rem;
 }
 
 /* ========== Mobile: native horizontal swipe ========== */

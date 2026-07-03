@@ -33,7 +33,8 @@
     width: 100%;
     flex: 1;
     min-height: 0;
-    overflow: visible;
+    overflow-x: clip;
+    overflow-y: visible;
     display: flex;
     align-items: stretch;
     padding: 0.35rem 0 0.5rem;
@@ -42,19 +43,21 @@
 .work_pin_section {
     position: relative;
     width: 100%;
-    overflow: visible;
+    overflow-x: clip;
+    overflow-y: visible;
 }
 
 .work_pin_track {
     display: flex;
     align-items: stretch;
     gap: 2rem;
-    padding: 0 max(1.5rem, calc((100vw - var(--container-max)) / 2 + var(--container-padding-x)));
+    padding: 0 max(1.5rem, calc((100% - var(--container-max)) / 2 + var(--container-padding-x)));
     will-change: transform;
 }
 
 .work_pin_item {
-    flex: 0 0 clamp(22rem, 40vw, 32rem);
+    flex: 0 0 30rem;
+    width: 30rem;
     display: flex;
     align-items: stretch;
     height: 100%;
@@ -63,7 +66,7 @@
 
 .work_pin_item .work_card {
     height: 100%;
-    min-height: clamp(26rem, calc(100vh - var(--header-height) - 11rem), 34rem);
+    min-height: 32rem;
 }
 
 .work_pin_spacer {
@@ -73,7 +76,7 @@
 .work_pin_hint {
     position: absolute;
     bottom: 3.25rem;
-    right: max(1.5rem, calc((100vw - var(--container-max)) / 2 + var(--container-padding-x)));
+    right: max(1.5rem, calc((100% - var(--container-max)) / 2 + var(--container-padding-x)));
     font-size: var(--smaller-font-size);
     color: var(--text-color);
     display: flex;

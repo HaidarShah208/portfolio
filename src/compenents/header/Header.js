@@ -1,103 +1,98 @@
-import React, { useState,useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import ProjectHeaderProgress from "../../pages/projects/ProjectHeaderProgress";
+import { motion } from "framer-motion";
+import useScrollSpy from "../../hooks/useScrollSpy";
+import { useLenis } from "../../components/smooth-scroll";
+import HeaderScrollProgress from "./HeaderScrollProgress";
 import "./header.css";
 
+const NAV_ITEMS = [
+  { id: "#home", label: "Home", icon: "uil-estate" },
+  { id: "#about", label: "About", icon: "uil-user" },
+  { id: "#skills", label: "Skills", icon: "uil-file-alt" },
+  { id: "#services", label: "Services", icon: "uil-briefcase" },
+  { id: "#projects", label: "Projects", icon: "uil-scenery" },
+  { id: "#contact", label: "Contact", icon: "uil-message" },
+];
 
-const Header = () => {
+function Header() {
+  const lenis = useLenis();
+  const { activeNav, setActiveNav, pageProgress, inProjectsSection } = useScrollSpy();
+  const [toggle, showMenu] = useState(false);
 
-// header shadow
-useEffect(() => {
-  const header = document.querySelector(".header");
+  useEffect(() => {
+    const header = document.querySelector(".header");
+    if (!header) return undefined;
 
-  window.addEventListener("scroll", function () {
-    if (this.scrollY > 80) {
-      header.classList.add("scroll-header");
-    } else {
-      header.classList.remove("scroll-header");
-    }
-  });
-  return () => {
-    window.removeEventListener("scroll", () => {});
-  };
-}, []);
+    const onScroll = () => {
+      const scrollY = lenis?.scroll ?? window.scrollY;
+      if (scrollY > 80) header.classList.add("scroll-header");
+      else header.classList.remove("scroll-header");
+    };
 
+    onScroll();
+    if (lenis) lenis.on("scroll", onScroll);
+    else window.addEventListener("scroll", onScroll, { passive: true });
 
+    return () => {
+      if (lenis) lenis.off("scroll", onScroll);
+      else window.removeEventListener("scroll", onScroll);
+    };
+  }, [lenis]);
 
-//header in medium screen
-  const [Toggle,showMenu]=useState(false)
-
-  //active nav in header
-  const [activeNav,setActiveNav]=useState('#home')
   const handleLinkClick = (id) => {
     setActiveNav(id);
-    showMenu(false); // Hide the menu when a link is clicked
+    showMenu(false);
   };
 
   return (
     <header className="header">
       <nav className="nav container">
-        <Link to={'/'} className="nav_logo">
+        <Link to="/" className="nav_logo">
           Ali Haidar
         </Link>
-        <div className={Toggle?"nav_menu show_menu ":"nav_menu"}>
+
+        <div className={toggle ? "nav_menu show_menu" : "nav_menu"}>
           <ul className="nav_list grid">
-            <li className="nav_item ">
-              <a href="#home" onClick={()=>handleLinkClick('#home')}  className={activeNav ==='#home' ?"nav_link active-link":"nav_link"}>
-                <i className="uil uil-estate nav_i nav_icon"></i>Home 
-              </a>
-            </li>
-            <li className="nav_item ">
-              <a href="#about" onClick={()=>handleLinkClick('#about')} className={activeNav ==='#about' ?"nav_link active-link":"nav_link"}>
-                <i className="uil uil-user nav_i nav_icon"></i>About
-              </a>
-            </li>
-            <li className="nav_item ">
-            <a
-                href="#skills"
-                onClick={() => handleLinkClick("#skills")}
-                className={activeNav === "#skills" ? "nav_link active-link" : "nav_link"}
-              >
-                <i className="uil uil-file-alt nav_i nav_icon"></i>Skills
-              </a>
-            </li>
-            <li className="nav_item ">
-            <a
-                href="#services"
-                onClick={() => handleLinkClick("#services")}
-                className={activeNav === "#services" ? "nav_link active-link" : "nav_link"}
-              >
-                <i className="uil uil-briefcase nav_i nav_icon"></i>Services
-              </a>
-            </li>
-            <li className="nav_item ">
-            <a
-                href="#projects"
-                onClick={() => handleLinkClick("#projects")}
-                className={activeNav === "#projects" ? "nav_link active-link" : "nav_link"}
-              >
-                <i className="uil uil-scenery nav_i nav_icon"></i>Projects
-              </a>
-            </li>
-            <li className="nav_item  ">
-            <a
-                href="#contact"
-                onClick={() => handleLinkClick("#contact")}
-                className={activeNav === "#contact" ? "nav_link active-link" : "nav_link"}
-              >
-                <i className="uil uil-message nav_i nav_icon"></i>Contact 
-              </a>
-            </li>
+            {NAV_ITEMS.map((item) => (
+              <li key={item.id} className="nav_item">
+                <a
+                  href={item.id}
+                  onClick={() => handleLinkClick(item.id)}
+                  className={
+                    activeNav === item.id ? "nav_link active-link" : "nav_link"
+                  }
+                >
+                  <i className={`uil ${item.icon} nav_i nav_icon`}></i>
+                  {item.label}
+                  {activeNav === item.id && (
+                    <motion.span
+                      layoutId="nav-active-indicator"
+                      className="nav_active_indicator"
+                      transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                    />
+                  )}
+                </a>
+              </li>
+            ))}
           </ul>
-          <i className="uil uil-times nav-close" onClick={()=>showMenu(!Toggle)}></i>
+          <i
+            className="uil uil-times nav-close"
+            onClick={() => showMenu(!toggle)}
+          ></i>
         </div>
-        <div className="nav-toggle" onClick={()=>showMenu(!Toggle)}>
+
+        <div className="nav-toggle" onClick={() => showMenu(!toggle)}>
           <i className="uil uil-apps"></i>
         </div>
       </nav>
-      <ProjectHeaderProgress />
+
+      <HeaderScrollProgress
+        progress={pageProgress}
+        visible={inProjectsSection}
+      />
     </header>
   );
 }
 
-export default Header
+export default Header;

@@ -7,8 +7,8 @@
         background-color: var(--container-color);
     }
 
-    /* Projects horizontal scroll progress — sits on header bottom edge */
-    .project-header-progress {
+    /* Page scroll progress — visible only inside projects section */
+    .header-scroll-progress {
         position: absolute;
         bottom: 0;
         left: 0;
@@ -17,14 +17,20 @@
         background: rgba(0, 0, 0, 0.08);
         overflow: hidden;
         pointer-events: none;
+        opacity: 0;
+        transition: opacity 0.35s ease;
     }
 
-    .project-header-progress__bar {
+    .header-scroll-progress--visible {
+        opacity: 1;
+    }
+
+    .header-scroll-progress__bar {
         height: 100%;
         width: 100%;
         background: var(--title-color);
         transform-origin: left center;
-        transition: transform 0.08s linear;
+        transition: transform 0.12s linear;
     }
     
     .nav {
@@ -53,27 +59,30 @@
         font-size: var(--small-font-size);
         color: var(--title-color);
         font-weight: var(--font-medium);
-        transition: .3s;
+        transition: color 0.35s ease;
         position: relative;
+    }
+
+    .nav_active_indicator {
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background-color: var(--title-color-dark);
+        border-radius: 999px;
     }
     
     .nav_link::after {
-        content: '';
-        position: absolute;
-        width: 0;
-        height: 2px;
-        bottom: -5px;
-        left: 0;
-        background-color: var(--title-color-dark);
-        transition: width 1s;
+        display: none;
     }
     
     .nav_link:hover::after {
-        width: 100%;
+        display: none;
     }
     
     .active-link::after {
-        width: 100%;
+        display: none;
     }
     
     .nav_icon,

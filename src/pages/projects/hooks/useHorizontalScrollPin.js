@@ -1,16 +1,13 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { useLenis } from "../../../components/smooth-scroll";
-import { useProjectScroll } from "../context/ProjectScrollContext";
 
 const MOBILE_BREAKPOINT = 768;
 
 /**
  * Pins the projects section while vertical scroll drives horizontal movement.
- * Works with Lenis smooth scroll when available.
  */
 export function useHorizontalScrollPin(trackRef, enabled = true) {
   const lenis = useLenis();
-  const { setScrollState } = useProjectScroll();
   const sectionRef = useRef(null);
   const [progress, setProgress] = useState(0);
   const [isPinned, setIsPinned] = useState(false);
@@ -47,18 +44,8 @@ export function useHorizontalScrollPin(trackRef, enabled = true) {
 
     track.style.transform = `translate3d(${-p * maxX}px, 0, 0)`;
     setProgress(p);
-
-    const isActive =
-      scrollable > 0 && clamped >= 0 && clamped <= scrollable;
-    setIsPinned(isActive && clamped > 0 && clamped < scrollable);
-    setScrollState({ progress: p, isActive });
-  }, [trackRef, enabled, getScrollY, setScrollState]);
-
-  useEffect(() => {
-    if (!enabled) {
-      setScrollState({ progress: 0, isActive: false });
-    }
-  }, [enabled, setScrollState]);
+    setIsPinned(clamped > 0 && clamped < scrollable);
+  }, [trackRef, enabled, getScrollY]);
 
   useEffect(() => {
     if (!enabled) return undefined;
@@ -94,17 +81,13 @@ export function useHorizontalScrollPin(trackRef, enabled = true) {
     if (trackRef.current) observer.observe(trackRef.current);
 
     return () => {
-      if (lenis) {
-        lenis.off("scroll", onScroll);
-      } else {
-        window.removeEventListener("scroll", onScroll);
-      }
+      if (lenis) lenis.off("scroll", onScroll);
+      else window.removeEventListener("scroll", onScroll);
       window.removeEventListener("resize", onResize);
       observer.disconnect();
       if (rafRef.current) cancelAnimationFrame(rafRef.current);
-      setScrollState({ progress: 0, isActive: false });
     };
-  }, [enabled, lenis, measure, updateScroll, trackRef, setScrollState]);
+  }, [enabled, lenis, measure, updateScroll, trackRef]);
 
   return { sectionRef, progress, isPinned };
 }

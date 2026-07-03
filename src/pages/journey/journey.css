@@ -44,15 +44,31 @@
     display: block;
   }
 
-  .journey-stack__card {
+  .journey-stack__card,
+  .journey-stack__card:nth-child(1),
+  .journey-stack__card:nth-child(2),
+  .journey-stack__card:nth-child(3) {
     position: relative;
     top: auto;
     margin-top: 0;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.25rem;
   }
 
   .journey-stack__card:last-child {
     margin-bottom: 0;
+  }
+
+  .journey.section {
+    padding-bottom: 2.5rem;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .journey-stack__card,
+  .journey-stack__card:nth-child(1),
+  .journey-stack__card:nth-child(2),
+  .journey-stack__card:nth-child(3) {
+    margin-bottom: 1rem;
   }
 }
 
@@ -61,10 +77,13 @@
     display: block;
   }
 
-  .journey-stack__card {
+  .journey-stack__card,
+  .journey-stack__card:nth-child(1),
+  .journey-stack__card:nth-child(2),
+  .journey-stack__card:nth-child(3) {
     position: relative;
     top: auto;
     margin-top: 0;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.25rem;
   }
 }

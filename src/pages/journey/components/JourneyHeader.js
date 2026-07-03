@@ -3,7 +3,7 @@ import { JOURNEY_SUBTITLE } from "../journeyData";
 
 function JourneyHeader() {
   return (
-    <header className="journey-header mb-10 text-center md:mb-14">
+    <header className="journey-header mb-6 text-center md:mb-14">
       <h2 id="journey-heading" className="section__title">
         My Journey
       </h2>

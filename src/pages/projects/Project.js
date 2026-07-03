@@ -4,7 +4,7 @@ import Work from "./Work";
 
 function Project() {
   return (
-    <section className="work section" id="projects">
+    <section className="work section mt-10" id="projects">
       <Work />
     </section>
   );

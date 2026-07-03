@@ -6,6 +6,7 @@ export const NAV_SECTIONS = [
   { id: "#about", selector: "#about" },
   { id: "#skills", selector: "#skills" },
   { id: "#services", selector: "#services" },
+  { id: "#journey", selector: "#journey" },
   { id: "#projects", selector: "#projects" },
   { id: "#contact", selector: "#contact" },
 ];

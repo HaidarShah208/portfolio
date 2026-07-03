@@ -11,6 +11,7 @@ const NAV_ITEMS = [
   { id: "#about", label: "About", icon: "uil-user" },
   { id: "#skills", label: "Skills", icon: "uil-file-alt" },
   { id: "#services", label: "Services", icon: "uil-briefcase" },
+  { id: "#journey", label: "Journey", icon: "uil-chart-line" },
   { id: "#projects", label: "Projects", icon: "uil-scenery" },
   { id: "#contact", label: "Contact", icon: "uil-message" },
 ];

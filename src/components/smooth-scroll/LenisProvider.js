@@ -1,5 +1,9 @@
 import React, { createContext, useContext, useEffect, useMemo, useState } from "react";
 import Lenis from "lenis";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const LenisContext = createContext(null);
 
@@ -22,7 +26,7 @@ function shouldEnableLenis() {
 }
 
 /**
- * Site-wide Lenis smooth scroll. Disabled on mobile and reduced-motion.
+ * Site-wide Lenis smooth scroll synced with GSAP ScrollTrigger.
  */
 export function LenisProvider({ children }) {
   const [lenis, setLenis] = useState(null);
@@ -40,15 +44,18 @@ export function LenisProvider({ children }) {
 
     setLenis(instance);
 
-    let rafId = 0;
-    const raf = (time) => {
-      instance.raf(time);
-      rafId = requestAnimationFrame(raf);
+    const onScroll = () => ScrollTrigger.update();
+    instance.on("scroll", onScroll);
+
+    const ticker = (time) => {
+      instance.raf(time * 1000);
     };
-    rafId = requestAnimationFrame(raf);
+    gsap.ticker.add(ticker);
+    gsap.ticker.lagSmoothing(0);
 
     return () => {
-      cancelAnimationFrame(rafId);
+      instance.off("scroll", onScroll);
+      gsap.ticker.remove(ticker);
       instance.destroy();
       setLenis(null);
     };

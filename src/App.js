@@ -5,7 +5,7 @@ import Home from './pages/home/Home'
 import About from "./pages/about/About";
 import Skills from "./pages/skills/Skills";
 import Services from "./pages/services/Services";
-import Qualification from "./pages/qualification/Qualification";
+import Journey from "./pages/journey";
 import Contect from "./pages/contect/Contect";
 import Footer from "./compenents/footer/Footer";
 import { ToastContainer } from 'react-toastify';
@@ -28,7 +28,7 @@ function App() {
           <About/>
           <Skills/>
           <Services/>
-          <Qualification/>
+          <Journey/>
           <Project/>
           <Contect/>
           <Footer/>

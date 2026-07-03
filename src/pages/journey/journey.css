@@ -1,0 +1,91 @@
+.journey-stack {
+  position: relative;
+  width: 100%;
+  /* Extra runway so the last card can fully land before the next section */
+  padding-bottom: 35vh;
+}
+
+/*
+ * Zunedaalim-style stack: sibling sticky cards in one column.
+ * Card 1 sticks → scroll → card 2 slides up and covers card 1 → card 3 covers card 2.
+ */
+.journey-stack__card {
+  position: sticky;
+  top: calc(var(--header-height, 3rem) + 4.5rem);
+  width: 100%;
+  margin-bottom: 85vh;
+  transform-origin: center top;
+  will-change: transform, opacity;
+}
+
+/* Card 2 needs more scroll distance so card 3 can fully slide on top */
+.journey-stack__card:nth-last-child(2) {
+  margin-bottom: 65vh;
+}
+
+.journey-stack__card:last-child {
+  margin-bottom: 45vh;
+}
+
+/* Keep every card fully visible while stuck (no bottom clipping) */
+.journey-stack__card .journey-card__surface {
+  max-height: calc(100dvh - var(--header-height, 3rem) - 5.5rem);
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0, 0, 0, 0.2) transparent;
+}
+
+.journey-stack__card .journey-card__surface::-webkit-scrollbar {
+  width: 4px;
+}
+
+.journey-stack__card .journey-card__surface::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.18);
+  border-radius: 999px;
+}
+
+@media screen and (max-width: 767px) {
+  .journey-stack {
+    padding-bottom: 0;
+  }
+
+  .journey-stack__card {
+    position: relative;
+    top: auto;
+    margin-bottom: 1.5rem;
+  }
+
+  .journey-stack__card:nth-last-child(2) {
+    margin-bottom: 1.5rem;
+  }
+
+  .journey-stack__card:last-child {
+    margin-bottom: 0;
+  }
+
+  .journey-stack__card .journey-card__surface {
+    max-height: none;
+    overflow-y: visible;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .journey-stack {
+    padding-bottom: 0;
+  }
+
+  .journey-stack__card {
+    position: relative;
+    top: auto;
+    margin-bottom: 1.5rem;
+  }
+
+  .journey-stack__card:nth-last-child(2) {
+    margin-bottom: 1.5rem;
+  }
+
+  .journey-stack__card .journey-card__surface {
+    max-height: none;
+    overflow-y: visible;
+  }
+}

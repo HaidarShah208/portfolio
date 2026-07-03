@@ -9,7 +9,7 @@ function Work() {
   const projects = projectData;
   const trackRef = useRef(null);
   const isMobile = useIsMobileScrollFallback();
-  const { sectionRef, progress } = useHorizontalScrollPin(trackRef, !isMobile);
+  const { sectionRef } = useHorizontalScrollPin(trackRef, !isMobile);
 
   const header = (
     <div className="container work__header">

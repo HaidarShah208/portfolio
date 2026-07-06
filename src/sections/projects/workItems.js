@@ -22,7 +22,10 @@ function WorkItems({ item, index }) {
           rel="noreferrer"
           aria-label={`View ${item.title} project`}
         >
-          <span className="work_card_overlay_text">View</span>
+          <span className="work_card_overlay_text">
+            View
+            <i className="uil uil-arrow-up-right work_card_overlay_icon"></i>
+          </span>
         </a>
       </div>
 

@@ -94,21 +94,21 @@
     
     @media screen and (max-width: 768px) {
         .header {
-            top: initial;
-            bottom: 0;
+            top: 0;
+            bottom: initial;
         }
         .nav {
             height: var(--header-height);
         }
         .nav_menu {
             position: fixed;
-            bottom: -100%;
+            top: -100%;
             left: 0;
             width: 100%;
             background-color: var(--body-color);
-            padding: 2rem 1.5rem 4rem;
-            box-shadow: 0 -1px 4px rgba(0, 0, 0, 0.15);
-            border-radius: 1.5rem 1.5rem 0 0;
+            padding: 2rem 1.5rem 2.5rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            border-radius: 0 0 1.5rem 1.5rem;
             transition: .3s;
         }
         .nav_list {
@@ -119,7 +119,7 @@
         .nav-close {
             position: absolute;
             right: 1.3rem;
-            bottom: .5rem;
+            top: .5rem;
             font-size: 1.5rem;
             cursor: pointer;
             color: var(--title-color);
@@ -131,7 +131,7 @@
             font-size: 1.2rem;
         }
         .show_menu {
-            bottom: 0;
+            top: var(--header-height);
         }
         .nav-toggle {
             font-size: 1.1rem;

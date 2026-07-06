@@ -52,16 +52,16 @@ function Contect() {
                 <div className="contact_card">
                     <i className="bx bx-mail-send contact_card-icon"></i>
                     <h3 className="contact_card-title">Email</h3>
-                    <span className="contact_card-data">alhi7896542@gmail.com </span>
+                    <span className="contact_card-data">dev.alihaidar.eng@gmail.com </span>
 
-                    <a href="mailto:alhi7896542@gmail.com" className="contact_button">message me
+                    <a href="mailto:dev.alihaidar.eng@gmail.com" className="contact_button">message me
                     <i className="bx bx-right-arrow-alt contact_button-icon"></i>
                     </a>
                 </div>
                 <div className="contact_card">
                     <i className="bx bxl-whatsapp contact_card-icon"></i>
                     <h3 className="contact_card-title">What's app</h3>
-                    <span className="contact_card-data">+92310-7580073 </span>
+                    <span className="contact_card-data">+92 310-7580073 </span>
 
                     <a href="https://wa.me/923107580073" className="contact_button">message me
                     <i className="bx bx-right-arrow-alt contact_button-icon"></i>

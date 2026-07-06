@@ -159,6 +159,9 @@
 }
 
 .work_card_overlay_text {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
     padding: 0.65rem 1.35rem;
     border: 1px solid rgba(255, 255, 255, 0.85);
     border-radius: 999px;
@@ -169,7 +172,21 @@
     color: #fff;
     transform: translateY(10px);
     opacity: 0;
-    transition: transform 0.35s ease, opacity 0.35s ease;
+    transition: transform 0.35s ease, opacity 0.35s ease, background-color 0.35s ease;
+}
+
+.work_card_overlay_icon {
+    font-size: 1.15rem;
+    line-height: 1;
+    transition: transform 0.35s ease;
+}
+
+.work_card_overlay:hover .work_card_overlay_text {
+    background-color: rgba(255, 255, 255, 0.12);
+}
+
+.work_card:hover .work_card_overlay_icon {
+    transform: translate(2px, -2px);
 }
 
 .work_card:hover .work_img {

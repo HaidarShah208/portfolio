@@ -1,5 +1,6 @@
 import ecom from '../../assests/ecom.png'
-import ss from '../../assests/ss.png'
+import boot from '../../assests/boot.png'
+import chatbase from '../../assests/chatbase.png'
 import movie from '../../assests/movie.png'
 import book from '../../assests/book.png'
 import medicare from '../../assests/medicare.png'
@@ -12,17 +13,17 @@ export const projectData=[
  
     {
         id:2,
-        img:'https://images.unsplash.com/photo-1614680376593-902f74cf0d41?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c3BvdGlmeXxlbnwwfHwwfHx8MA%3D%3D',
-        title:'Spotify',
+        img: chatbase,
+        title:'ChatBase',
         category:'Javascirpt',
-        link:'http://spotify-music-project.surge.sh'
+        link:'https://chatbase.stackup.solutions'
     },
     {
         id:4,
-        img:ss,
-        title:'Js Protfolio',
+        img:boot,
+        title:'Bootcamp wise',
         category:'Javascirpt',
-        link:'http://js-portfolios.surge.sh'
+        link:'https://www.bootcampwise.com/'
     },
     {
         id:9,

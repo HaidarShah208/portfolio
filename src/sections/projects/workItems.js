@@ -8,7 +8,13 @@ function WorkItems({ item, index }) {
       <span className="work_card_index">{label}</span>
 
       <div className="work_card_media">
-        <img className="work_img" src={item.img} alt={item.title} loading="lazy" />
+        <img
+          className="work_img"
+          src={item.img}
+          alt={`${item.title} - ${item.category} project by Ali Haidar`}
+          loading="lazy"
+          decoding="async"
+        />
         <a
           href={item.link}
           className="work_card_overlay"

@@ -44,8 +44,10 @@ function About() {
       <div className="about__container container md:flex md:flex-row flex-col ">
       <motion.img
           src={profile}
-          alt="Profile"
+          alt="Ali Haidar - Full Stack & AI Developer"
           className="mx-auto h-auto md:mb-0 mb-4 w-full md:max-w-[85%] shrink-0 rounded-2xl object-cover sm:w-60 md:mx-0 md:w-[37%] lg:max-w-[380px]"
+          loading="lazy"
+          decoding="async"
           initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.2 }}
         />
 

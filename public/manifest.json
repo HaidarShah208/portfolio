@@ -1,6 +1,7 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Ali Haidar",
+  "name": "Ali Haidar | Full Stack & AI Developer",
+  "description": "Portfolio of Ali Haidar, a Full Stack & AI Developer building scalable web applications and AI-powered solutions.",
   "icons": [
     {
       "src": "favicon.ico",
@@ -18,7 +19,8 @@
       "sizes": "512x512"
     }
   ],
-  "start_url": ".",
+  "start_url": "/",
+  "scope": "/",
   "display": "standalone",
   "theme_color": "#000000",
   "background_color": "#ffffff"

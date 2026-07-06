@@ -50,6 +50,8 @@ function SkillInfoPanel({ skill, onClose, reducedMotion }) {
                     src={skill.icon}
                     alt=""
                     className="h-full w-full object-contain"
+                    loading="lazy"
+                    decoding="async"
                   />
                 </span>
                 <div>

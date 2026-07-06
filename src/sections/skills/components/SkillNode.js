@@ -91,6 +91,7 @@ function SkillNode({ skill, isSelected, isHovered, onSelect, onHover }) {
                 alt=""
                 className="h-6 w-6 "
                 loading="lazy"
+                decoding="async"
                 draggable={false}
                 style={{width:'10px',height:'10px'}}
               />

@@ -1,6 +1,5 @@
 /*=============== GOOGLE FONTS ===============*/
-
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+/* Poppins is loaded and optimized via next/font in src/app/layout.tsx (self-hosted, no layout shift). */
 
 /*=============== VARIABLES CSS ===============*/
 
@@ -16,7 +15,7 @@
     --body-color: hsl(var(--hue), var(--sat), 98%);
     --container-color: #fff;
     /*========== Font and typography ==========*/
-    --body-font: "Poppins", sans-serif;
+    --body-font: var(--font-poppins), "Poppins", sans-serif;
     /*.5rem = 8px | 1rem = 16px ...*/
     --big-font-size: 3.5rem;
     --h1-font-size: 2.25rem;

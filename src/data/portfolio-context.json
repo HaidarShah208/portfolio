@@ -1,0 +1,158 @@
+{
+  "profile": {
+    "name": "Ali Haidar",
+    "title": "Full Stack & AI Developer",
+    "tagline": "Building scalable web applications and AI-powered digital experiences.",
+    "location": "Pakistan",
+    "email": "dev.alihaidar.eng@gmail.com",
+    "phone": "+92 3107580073",
+    "website": "https://yourportfolio.com",
+    "linkedin": "https://www.linkedin.com/in/ali-haidar-5181a5276/",
+    "github": "https://github.com/HaidarShah208"
+  },
+  "about": {
+    "summary": "Ali Haidar is a Full Stack & AI Developer with over 3 years of professional experience building scalable web applications, APIs, AI-powered products, and automation solutions. He specializes in React, Next.js, Node.js, NestJS, FastAPI, PostgreSQL, MongoDB, Docker, AWS, and OpenAI integrations."
+  },
+  "experience": [
+    {
+      "company": "Techloset",
+      "position": "Frontend Engineer Intern",
+      "employmentType": "Internship",
+      "duration": "Jan 2022 - Jun 2022",
+      "description": "Completed a six-month internship focused on MERN Stack and React Native development while learning professional software engineering practices.",
+      "responsibilities": [
+        "Built React applications",
+        "Developed React Native features",
+        "Integrated REST APIs",
+        "Worked with Git and Agile workflow",
+        "Learned responsive UI development"
+      ]
+    },
+    {
+      "company": "Fista Solutions",
+      "position": "Full Stack Developer",
+      "employmentType": "Full Time",
+      "duration": "March 2023 - May 2025",
+      "description": "Worked for two years delivering production-ready full stack applications using React, Next.js, Node.js, Express.js, MongoDB and PostgreSQL.",
+      "responsibilities": [
+        "Built scalable web applications",
+        "Developed REST APIs",
+        "Authentication systems",
+        "Dashboard development",
+        "Third-party API integrations",
+        "Payment gateway integration",
+        "Cloud deployments"
+      ]
+    },
+    {
+      "company": "StackUp Solutions",
+      "position": "Full Stack & AI Developer",
+      "employmentType": "Current",
+      "duration": "June 2025 - Present",
+      "description": "Currently developing AI-powered web applications using OpenAI, FastAPI, Node.js, React, Next.js, Docker, AWS, PostgreSQL and workflow automation.",
+      "responsibilities": [
+        "AI integrations",
+        "OpenAI API",
+        "Automation workflows",
+        "FastAPI backend",
+        "Node.js backend",
+        "Docker deployments",
+        "AWS infrastructure",
+        "Performance optimization"
+      ]
+    }
+  ],
+  "skills": {
+    "frontend": [
+      "React",
+      "Next.js",
+      "TypeScript",
+      "JavaScript",
+      "Tailwind CSS",
+      "GSAP",
+      "Framer Motion"
+    ],
+    "backend": [
+      "Node.js",
+      "Express.js",
+      "NestJS",
+      "FastAPI",
+      "REST API",
+      "JWT Authentication"
+    ],
+    "database": [
+      "MongoDB",
+      "PostgreSQL",
+      "Redis"
+    ],
+    "ai": [
+      "OpenAI API",
+      "Prompt Engineering",
+      "AI Automation",
+      "LLM Integration"
+    ],
+    "devops": [
+      "Docker",
+      "AWS",
+      "Git",
+      "GitHub",
+      "CI/CD"
+    ]
+  },
+  "services": [
+    "Full Stack Development",
+    "AI Integration",
+    "REST API Development",
+    "Dashboard Development",
+    "Admin Panels",
+    "Automation Solutions",
+    "Cloud Deployment",
+    "Performance Optimization"
+  ],
+  "projects": [
+    {
+      "name": "Chatbase",
+      "description": "ChatBase AI is an AI-powered customer support platform that enables businesses to create intelligent chatbots using their own knowledge base. Users can upload documents or website content, and the chatbot provides context-aware, natural language responses using Large Language Models (LLMs). The platform includes chatbot management, conversation history, authentication, and a responsive dashboard for monitoring AI interactions.",
+      "tech": {
+        "frontend": [
+          "React.js",
+          "TypeScript",
+          "Tailwind CSS",
+          "Shadcn UI",
+          "Framer Motion"
+        ],
+        "backend": [
+          "Node.js",
+          "Express.js",
+          "FastAPI",
+          "JWT Authentication"
+        ],
+        "ai": [
+          "OpenAI API",
+          "Prompt Engineering",
+          "RAG",
+          "Embeddings"
+        ],
+        "database": [
+          "PostgreSQL",
+          "TypeORM"
+        ],
+        "devops": [
+          "Docker",
+          "GitHub",
+          "CI/CD"
+        ]
+      }
+    }
+  ],
+  "personality": {
+    "tone": "Professional, friendly, concise and confident.",
+    "writingStyle": "Answer like an experienced software engineer. Keep responses structured and easy to understand. Avoid unnecessary marketing language."
+  },
+  "assistantRules": {
+    "onlyAnswerPortfolioQuestions": true,
+    "neverHallucinate": true,
+    "ifUnknown": "I don't have enough information to answer that. Please contact Ali directly.",
+    "unrelatedQuestion": "I'm Ali's AI Portfolio Assistant. I can help you with Ali's experience, projects, skills, AI expertise, services, resume, and hiring information."
+  }
+}

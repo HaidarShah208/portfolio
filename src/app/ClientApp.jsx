@@ -13,6 +13,7 @@ import "react-toastify/dist/ReactToastify.css";
 import Project from "../sections/projects/Project";
 import CustomCursor from "../components/custom-cursor";
 import { LenisProvider } from "../components/smooth-scroll";
+import AIChat from "../components/AIChat";
 
 function ClientApp() {
   return (
@@ -30,6 +31,7 @@ function ClientApp() {
           <Contect />
           <Footer />
         </main>
+        <AIChat />
       </>
       <ToastContainer />
     </LenisProvider>

@@ -92,13 +92,20 @@ export default function AIChat() {
       <motion.button
         type="button"
         onClick={() => setIsOpen((v) => !v)}
-        className="fixed bottom-5 right-5 z-[900] flex h-14 w-14 items-center justify-center rounded-full bg-neutral-900 text-white shadow-[0_10px_30px_rgba(0,0,0,0.25)] transition-colors hover:bg-black focus:outline-none focus-visible:ring-2 focus-visible:ring-neutral-900 focus-visible:ring-offset-2 md:h-16 md:w-16"
+        className={`fixed bottom-5 right-5 z-[900] flex h-14 w-14 items-center justify-center rounded-full bg-gradient-to-br from-neutral-800 to-black text-white shadow-[0_10px_30px_rgba(0,0,0,0.35)] transition-all duration-300 hover:shadow-[0_16px_40px_rgba(0,0,0,0.45)] focus:outline-none focus-visible:ring-2 focus-visible:ring-neutral-900 focus-visible:ring-offset-2 md:h-16 md:w-16 ${
+          isOpen
+            ? "max-lg:pointer-events-none max-lg:scale-0 max-lg:opacity-0"
+            : ""
+        }`}
         aria-label={isOpen ? "Close AI assistant" : "Open AI assistant"}
         aria-expanded={isOpen}
         aria-controls={panelId}
         whileTap={{ scale: 0.92 }}
         whileHover={{ scale: 1.05 }}
       >
+        {!isOpen && (
+          <span className="absolute right-0.5 top-0.5 h-3.5 w-3.5 rounded-full border-2 border-black bg-green-400" />
+        )}
         <AnimatePresence mode="wait" initial={false}>
           {isOpen ? (
             <motion.i
@@ -129,23 +136,25 @@ export default function AIChat() {
             role="dialog"
             aria-modal="false"
             aria-label="Ali's AI Portfolio Assistant"
-            className="fixed bottom-24 right-3 left-3 z-[900] flex max-h-[75vh] flex-col overflow-hidden rounded-2xl border border-neutral-200 bg-neutral-50 shadow-[0_20px_60px_rgba(0,0,0,0.25)] sm:left-auto sm:right-5 sm:w-[400px] md:bottom-28"
-            initial={{ opacity: 0, y: 24, scale: 0.98 }}
+            className="fixed left-2 right-2 top-0.5 bottom-2 z-[900] flex flex-col overflow-hidden rounded-3xl border border-white/50 bg-white/85 shadow-[0_24px_70px_-10px_rgba(0,0,0,0.45)] ring-1 ring-black/5 backdrop-blur-xl lg:left-auto lg:right-6 lg:top-auto lg:bottom-24 lg:h-[640px] lg:max-h-[82vh] lg:w-[420px]"
+            initial={{ opacity: 0, y: 20, scale: 0.97 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
-            exit={{ opacity: 0, y: 24, scale: 0.98 }}
-            transition={{ duration: 0.22, ease: [0.22, 1, 0.36, 1] }}
+            exit={{ opacity: 0, y: 20, scale: 0.97 }}
+            transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
           >
             {/* Header */}
-            <header className="flex items-center gap-3 border-b border-neutral-200 bg-white px-4 py-3">
-              <span className="flex h-9 w-9 items-center justify-center rounded-full bg-neutral-900 text-white">
+            <header className="relative flex items-center gap-3 overflow-hidden bg-gradient-to-br from-neutral-900 via-neutral-800 to-black px-4 py-3.5 text-white">
+              <span className="pointer-events-none absolute -right-8 -top-12 h-28 w-28 rounded-full bg-white/10 blur-2xl" />
+              <span className="relative flex h-10 w-10 items-center justify-center rounded-full bg-white/10 ring-1 ring-white/20 backdrop-blur">
                 <i className="bx bx-bot text-xl" />
+                <span className="absolute -bottom-0.5 -right-0.5 h-3 w-3 rounded-full border-2 border-neutral-900 bg-green-400" />
               </span>
-              <div className="min-w-0">
-                <p className="truncate text-sm font-semibold text-neutral-900">
+              <div className="relative min-w-0">
+                <p className="truncate text-sm font-semibold tracking-tight">
                   Portfolio Assistant
                 </p>
-                <p className="flex items-center gap-1.5 text-xs text-neutral-500">
-                  <span className="inline-block h-1.5 w-1.5 rounded-full bg-green-500" />
+                <p className="flex items-center gap-1.5 text-xs text-white/60">
+                   
                   Ask about Ali
                 </p>
               </div>
@@ -153,7 +162,7 @@ export default function AIChat() {
                 type="button"
                 onClick={() => setIsOpen(false)}
                 aria-label="Close assistant"
-                className="ml-auto flex h-8 w-8 items-center justify-center rounded-full text-neutral-500 transition-colors hover:bg-neutral-100 hover:text-neutral-900 focus:outline-none focus-visible:ring-2 focus-visible:ring-neutral-900"
+                className="relative ml-auto flex h-8 w-8 items-center justify-center rounded-full text-white/70 transition-colors hover:bg-white/10 hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-white/50"
               >
                 <i className="bx bx-x text-2xl" />
               </button>
@@ -162,28 +171,41 @@ export default function AIChat() {
             {/* Messages */}
             <div
               ref={scrollRef}
-              className="ai-chat-scroll flex-1 space-y-3 overflow-y-auto px-4 py-4"
+              className="ai-chat-scroll min-h-0 flex-1 space-y-3 overflow-y-auto bg-gradient-to-b from-neutral-50 to-white px-4 py-4"
               aria-live="polite"
               aria-atomic="false"
             >
               {messages.length === 0 && (
-                <div className="space-y-4">
-                  <div className="rounded-2xl rounded-bl-md border border-neutral-200 bg-white px-4 py-3 text-sm leading-relaxed text-neutral-700">
-                    {WELCOME}
+                <motion.div
+                  className="space-y-4"
+                  initial={{ opacity: 0, y: 8 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <div className="flex items-start gap-2.5">
+                    <span className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-neutral-800 to-black text-white">
+                      <i className="bx bx-bot text-lg" />
+                    </span>
+                    <div className="rounded-2xl rounded-tl-md border border-neutral-200 bg-white px-4 py-3 text-sm leading-relaxed text-neutral-700 shadow-sm">
+                      {WELCOME}
+                    </div>
                   </div>
-                  <div className="flex flex-wrap gap-2">
-                    {SUGGESTIONS.map((s) => (
-                      <button
+                  <div className="flex flex-wrap gap-2 pl-10">
+                    {SUGGESTIONS.map((s, i) => (
+                      <motion.button
                         key={s}
                         type="button"
                         onClick={() => submit(s)}
-                        className="rounded-full border border-neutral-300 bg-white px-3 py-1.5 text-xs font-medium text-neutral-700 transition-colors hover:border-neutral-900 hover:text-neutral-900 focus:outline-none focus-visible:ring-2 focus-visible:ring-neutral-900"
+                        initial={{ opacity: 0, y: 6 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.12 + i * 0.06 }}
+                        className="rounded-full border border-neutral-200 bg-white/80 px-3.5 py-2 text-xs font-medium text-neutral-700 shadow-sm transition-all hover:-translate-y-0.5 hover:border-neutral-900 hover:text-neutral-900 hover:shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-neutral-900"
                       >
                         {s}
-                      </button>
+                      </motion.button>
                     ))}
                   </div>
-                </div>
+                </motion.div>
               )}
 
               {messages.map((m) => (
@@ -205,9 +227,9 @@ export default function AIChat() {
             {/* Composer */}
             <form
               onSubmit={onSubmit}
-              className="border-t border-neutral-200 bg-white p-3"
+              className="border-t border-neutral-200 bg-white/90 p-3 backdrop-blur"
             >
-              <div className="flex items-end gap-2 rounded-2xl border border-neutral-300 bg-neutral-50 px-3 py-2 focus-within:border-neutral-900">
+              <div className="flex items-end gap-2 rounded-2xl border border-neutral-300 bg-neutral-50 px-3 py-2 shadow-sm transition-colors focus-within:border-neutral-900 focus-within:bg-white focus-within:ring-4 focus-within:ring-neutral-900/5">
                 <label htmlFor={`${panelId}-input`} className="sr-only">
                   Message the assistant
                 </label>
@@ -235,13 +257,12 @@ export default function AIChat() {
                     type="submit"
                     disabled={!input.trim()}
                     aria-label="Send message"
-                    className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-neutral-900 text-white transition-colors hover:bg-black disabled:cursor-not-allowed disabled:opacity-40 focus:outline-none focus-visible:ring-2 focus-visible:ring-neutral-900"
+                    className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-neutral-800 to-black text-white transition-all hover:shadow-md hover:brightness-110 disabled:cursor-not-allowed disabled:opacity-40 focus:outline-none focus-visible:ring-2 focus-visible:ring-neutral-900"
                   >
                     <i className="bx bx-send text-lg" />
                   </button>
                 )}
               </div>
-              
             </form>
           </motion.div>
         )}

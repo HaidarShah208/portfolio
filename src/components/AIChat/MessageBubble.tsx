@@ -1,5 +1,6 @@
 "use client";
 
+import { motion } from "framer-motion";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import type { ChatMessage } from "@/types/chat";
@@ -12,15 +13,25 @@ export default function MessageBubble({ message }: MessageBubbleProps) {
   const isUser = message.role === "user";
 
   return (
-    <div
-      className={`flex w-full ${isUser ? "justify-end" : "justify-start"}`}
+    <motion.div
+      className={`flex w-full items-end gap-2 ${
+        isUser ? "justify-end" : "justify-start"
+      }`}
       data-role={message.role}
+      initial={{ opacity: 0, y: 10, scale: 0.98 }}
+      animate={{ opacity: 1, y: 0, scale: 1 }}
+      transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
     >
+      {!isUser && (
+        <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-neutral-800 to-black text-white">
+          <i className="bx bx-bot text-base" />
+        </span>
+      )}
       <div
         className={[
-          "max-w-[85%] rounded-2xl px-4 py-2.5 text-sm leading-relaxed",
+          "max-w-[82%] rounded-2xl px-4 py-2.5 text-sm leading-relaxed shadow-sm",
           isUser
-            ? "rounded-br-md bg-neutral-900 text-white"
+            ? "rounded-br-md bg-gradient-to-br from-neutral-800 to-black text-white"
             : "rounded-bl-md border border-neutral-200 bg-white text-neutral-800",
         ].join(" ")}
       >
@@ -59,6 +70,6 @@ export default function MessageBubble({ message }: MessageBubbleProps) {
           </div>
         )}
       </div>
-    </div>
+    </motion.div>
   );
 }

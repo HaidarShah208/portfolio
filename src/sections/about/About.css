@@ -17,10 +17,7 @@
     margin-bottom: var(--mb-0-5);
 }
 
-.about_title {
-    font-size: var(--small-font-size);
-    font-weight: var(--font-medium);
-}
+
 
 .about_subtitle {
     font-size: var(--tiny-font-size);

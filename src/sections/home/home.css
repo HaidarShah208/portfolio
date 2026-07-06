@@ -74,7 +74,7 @@
 }
 
 .home_img {
-    background: url(../../assests/new.png);
+    background: url(/assests/new.png);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;

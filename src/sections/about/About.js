@@ -1,9 +1,10 @@
 import React,{useState,useEffect,useCallback} from "react";
-import profile from "../../assests/new.png";
 import "./About.css";
 import Info from "./Info";
-import CV from "../../assests/CV.pdf";
 import { motion, useAnimation } from 'framer-motion';
+
+const profile = "/assests/new.png";
+const CV = "/assests/CV.pdf";
 
 function About() {
   const controls = useAnimation();

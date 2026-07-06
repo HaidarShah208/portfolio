@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import useScrollSpy from "../../hooks/useScrollSpy";
 import { useLenis } from "../../components/smooth-scroll";
@@ -49,9 +48,9 @@ function Header() {
   return (
     <header className="header">
       <nav className="nav container">
-        <Link to="/" className="nav_logo">
+        <a href="#home" className="nav_logo" onClick={() => handleLinkClick("#home")}>
           Ali Haidar
-        </Link>
+        </a>
 
         <div className={toggle ? "nav_menu show_menu" : "nav_menu"}>
           <ul className="nav_list grid">

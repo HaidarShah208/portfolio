@@ -1,11 +1,11 @@
-import ecom from '../../assests/ecom.png'
-import boot from '../../assests/boot.png'
-import chatbase from '../../assests/chatbase.png'
-import movie from '../../assests/movie.png'
-import book from '../../assests/book.png'
-import medicare from '../../assests/medicare.png'
-import recipe from '../../assests/recipe.png'
-import crud from '../../assests/crud.png'
+const ecom = '/assests/ecom.png'
+const boot = '/assests/boot.png'
+const chatbase = '/assests/chatbase.png'
+const movie = '/assests/movie.png'
+const book = '/assests/book.png'
+const medicare = '/assests/medicare.png'
+const recipe = '/assests/recipe.png'
+const crud = '/assests/crud.png'
 
 
 

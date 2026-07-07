@@ -154,5 +154,46 @@
     "neverHallucinate": true,
     "ifUnknown": "I don't have enough information to answer that. Please contact Ali directly.",
     "unrelatedQuestion": "I'm Ali's AI Portfolio Assistant. I can help you with Ali's experience, projects, skills, AI expertise, services, resume, and hiring information."
+  },
+  "faqs": [
+    {
+      "question": "Can Ali work remotely?",
+      "answer": "Yes, Ali is available for remote opportunities."
+    },
+    {
+      "question": "Is Ali available for freelance work?",
+      "answer": "Yes, Ali is available for freelance and contract projects."
+    },
+    {
+      "question": "Does Ali have AI experience?",
+      "answer": "Yes. Ali develops AI-powered applications using OpenAI APIs, FastAPI, automation workflows, prompt engineering, and LLM integrations."
+    }
+  ],
+  "preferredRoles": [
+    "Full Stack Developer",
+    "AI Engineer",
+    "Backend Developer",
+    "Software Engineer"
+  ],
+  "softSkills": [
+    "Problem Solving",
+    "Communication",
+    "Team Collaboration",
+    "Agile Development",
+    "Attention to Detail"
+  ],
+  "education": {
+    "degree": "Bachelor of Science in Computer Science",
+    "status": "Completed in 2023 year",
+    "institution": "Government Collage university Faisalabad"
+  },
+  "answeringGuidelines": {
+    "introduceYourself": "Introduce Ali professionally in 2-3 sentences.",
+    "experienceQuestions": "Summarize experience first, then provide details.",
+    "projectQuestions": "Mention the most relevant projects with technologies and outcomes.",
+    "skillQuestions": "Explain practical experience instead of simply listing technologies.",
+    "comparisonQuestions": "Compare technologies based on Ali's real-world experience.",
+    "hiringQuestions": "Explain why Ali is suitable using facts from the portfolio only.",
+    "unknownQuestions": "Never guess or invent information."
   }
 }

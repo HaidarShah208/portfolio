@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 function SkillsFallback() {
   return (
     <div
-      className="flex h-[min(72vh,640px)] w-full items-center justify-center rounded-3xl border border-neutral-200 bg-neutral-50"
+      className="flex h-[min(82vh,640px)] w-full items-center justify-center rounded-3xl border border-neutral-200 bg-neutral-50"
       role="status"
       aria-live="polite"
       aria-label="Loading skills globe"

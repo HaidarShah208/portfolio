@@ -196,14 +196,14 @@ const rawSkills = [
     related: ["GitHub", "Docker", "AWS", "Node.js"],
   },
   {
-    id: "openai",
-    name: "OpenAI API",
-    icon: `https://cdn.simpleicons.org/openai`,
+    id: "redux",
+    name: "Redux Toolkit",
+    icon: `${ICON_BASE}/redux/redux-original.svg`,
     level: "Advanced",
-    years: "1+ years",
+    years: "2+ years",
     description:
-      "Integrating GPT models, assistants, embeddings, and AI-powered workflows into production applications.",
-    related: ["Python", "FastAPI", "LangChain", "n8n"],
+      "Managing scalable application state with Redux Toolkit and async thunks.",
+    related: ["React", "TypeScript", "JavaScript", "Next.js"],
   },
   {
     id: "langchain",
@@ -248,6 +248,26 @@ const rawSkills = [
     description:
       "Writing unit and integration tests to ensure application reliability and maintainable codebases.",
     related: ["React", "Node.js", "TypeScript", "NestJS"],
+  },
+  {
+    id: "swagger",
+    name: "Swagger",
+    icon: `${ICON_BASE}/swagger/swagger-original.svg`,
+    level: "Advanced",
+    years: "2+ years",
+    description:
+      "Designing and documenting REST APIs using OpenAPI specifications.",
+    related: ["NestJS", "Express.js", "FastAPI", "Node.js"],
+  },
+  {
+    id: "stripe",
+    name: "Stripe",
+    icon: "https://cdn.simpleicons.org/stripe",
+    level: "Advanced",
+    years: "1+ years",
+    description:
+      "Integrated secure payment processing, subscriptions, webhooks, and billing workflows.",
+    related: ["Node.js", "Express.js", "React", "PostgreSQL"],
   },
 ];
 

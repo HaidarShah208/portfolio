@@ -50,7 +50,7 @@ function DotGlobe() {
 function WireframeShell() {
   return (
     <mesh renderOrder={0}>
-      <sphereGeometry args={[GLOBE_SHELL_RADIUS, 48, 48]} />
+      <sphereGeometry args={[GLOBE_SHELL_RADIUS, 68, 68]} />
       <meshBasicMaterial
         color="#d4d4d4"
         wireframe

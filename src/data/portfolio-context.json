@@ -143,6 +143,95 @@
           "CI/CD"
         ]
       }
+    },
+    {
+      "name": "Point of Sale (POS) System",
+      "description": "A comprehensive Point of Sale (POS) system developed for retail and restaurant businesses to streamline sales, inventory management, customer records, and financial reporting. The application supports secure authentication, real-time inventory tracking, order management, invoice generation, role-based access control, and business analytics through an intuitive dashboard.",
+      "features": [
+        "Sales & Billing",
+        "Inventory Management",
+        "Product & Category Management",
+        "Customer Management",
+        "Role-Based Authentication",
+        "Invoice Generation",
+        "Sales Reports & Analytics",
+        "Dashboard & Charts"
+      ],
+      "tech": {
+        "frontend": [
+          "React.js",
+          "TypeScript",
+          "Tailwind CSS",
+          "Shadcn UI"
+        ],
+        "backend": [
+          "Node.js",
+          "Express.js",
+          "JWT Authentication"
+        ],
+        "database": [
+          "PostgreSQL",
+          "TypeORM"
+        ],
+        "devops": [
+          "Docker",
+          "GitHub"
+        ]
+      }
+    },
+    {
+      "name": "Taekwondo E-Commerce Platform",
+      "description": "A full-stack e-commerce platform developed for a Taekwondo equipment supplier, enabling customers to browse and purchase uniforms, belts, stickers, protective gear, and other martial arts accessories. The platform includes a complete order management workflow where administrators review and approve orders before processing them for delivery, ensuring accurate inventory and order fulfillment.",
+      "features": [
+        "Product Catalog",
+        "Product Categories",
+        "Advanced Product Search",
+        "Shopping Cart",
+        "Secure User Authentication",
+        "Order Placement",
+        "Admin Order Approval",
+        "Order Status Tracking",
+        "Inventory Management",
+        "Customer Profile",
+        "Responsive Design"
+      ],
+      "tech": {
+        "frontend": [
+          "React.js",
+          "TypeScript",
+          "Tailwind CSS"
+        ],
+        "backend": [
+          "Node.js",
+          "Express.js",
+          "JWT Authentication"
+        ],
+        "database": [
+          "PostgreSQL",
+          "TypeORM"
+        ],
+        "integrations": [
+          "Cloudinary",
+          "SMTP Email Notifications"
+        ],
+        "devops": [
+          "Docker",
+          "GitHub",
+          "CI/CD"
+        ]
+      },
+      "role": "Full Stack Developer",
+      "status": "Completed",
+      "responsibilities": [
+        "Designed and developed the frontend application.",
+        "Built RESTful APIs for products, users, and orders.",
+        "Implemented secure JWT authentication and authorization.",
+        "Developed the shopping cart and checkout workflow.",
+        "Created an admin dashboard for managing products and orders.",
+        "Implemented order approval and status management.",
+        "Designed the PostgreSQL database schema using TypeORM.",
+        "Integrated image upload and optimization with Cloudinary."
+      ]
     }
   ],
   "personality": {

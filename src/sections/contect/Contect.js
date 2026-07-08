@@ -3,25 +3,41 @@ import './contect.css'
 import { useRef } from 'react';
 import emailjs from '@emailjs/browser';
 import { toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { useFormik } from 'formik';
+import * as Yup from 'yup';
 import { motion, useAnimation } from 'framer-motion';
+
+const validationSchema = Yup.object({
+  name: Yup.string().trim().required('Please enter your name'),
+  email: Yup.string()
+    .trim()
+    .email('Please enter a valid email')
+    .required('Please enter your email'),
+  project: Yup.string().trim().required('Please write your question'),
+});
+
 function Contect() {
     const form = useRef();
     const controls = useAnimation();
 
-    const sendEmail = (e) => {
-      e.preventDefault();
-      const name = form.current.name.value;
-    const email = form.current.email.value;
-    const project = form.current.project.value;
-    if (!name || !email || !project) {
-      toast.error('Please fill all fields.');
-      return;
-    }
-      emailjs.sendForm('service_n29im7m', 'template_xt34ipm', form.current, 'O1fmWm9xkTy8R_NTz')
-      toast.success('successfully submit')
-        e.target.reset()
-    };
+    const formik = useFormik({
+      initialValues: { name: '', email: '', project: '' },
+      validationSchema,
+      onSubmit: async (values, { resetForm }) => {
+        try {
+          await emailjs.sendForm(
+            'service_n29im7m',
+            'template_xt34ipm',
+            form.current,
+            'O1fmWm9xkTy8R_NTz'
+          );
+          toast.success('Message sent successfully!');
+          resetForm();
+        } catch (error) {
+          toast.error('Something went wrong. Please try again.');
+        }
+      },
+    });
 
 
   const handleScroll = useCallback(() => {
@@ -81,20 +97,60 @@ function Contect() {
             <div className="contact_content">
                <h3 className="contact_title">write me your question</h3>
 
-               <form ref={form} onSubmit={sendEmail} className="contact_form" >
+               <form ref={form} onSubmit={formik.handleSubmit} className="contact_form" noValidate>
                  <div className="contact_form-div">
                     <label className="contact_form-tag">Name</label>
-                    <input type="text" placeholder='type your name' name="name" className='contact_form-input' />
+                    <input
+                      type="text"
+                      placeholder='type your name'
+                      name="name"
+                      className={`contact_form-input${
+                        formik.touched.name && formik.errors.name ? ' has-error' : ''
+                      }`}
+                      value={formik.values.name}
+                      onChange={formik.handleChange}
+                      onBlur={formik.handleBlur}
+                    />
+                    {formik.touched.name && formik.errors.name && (
+                      <span className="contact_form-error">{formik.errors.name}</span>
+                    )}
                  </div>
                  <div className="contact_form-div">
                     <label className="contact_form-tag">Mail</label>
-                    <input type="email" placeholder='type your name' name="email" className='contact_form-input' />
+                    <input
+                      type="email"
+                      placeholder='type your email'
+                      name="email"
+                      className={`contact_form-input${
+                        formik.touched.email && formik.errors.email ? ' has-error' : ''
+                      }`}
+                      value={formik.values.email}
+                      onChange={formik.handleChange}
+                      onBlur={formik.handleBlur}
+                    />
+                    {formik.touched.email && formik.errors.email && (
+                      <span className="contact_form-error">{formik.errors.email}</span>
+                    )}
                  </div>
                  <div className="contact_form-div contact_form-area">
                     <label className="contact_form-tag">Write Question</label>
-                    <textarea cols="30" rows="20"  placeholder='type your question' name="project"  className='contact_form-input' />
+                    <textarea
+                      cols="30"
+                      rows="20"
+                      placeholder='type your question'
+                      name="project"
+                      className={`contact_form-input${
+                        formik.touched.project && formik.errors.project ? ' has-error' : ''
+                      }`}
+                      value={formik.values.project}
+                      onChange={formik.handleChange}
+                      onBlur={formik.handleBlur}
+                    />
+                    {formik.touched.project && formik.errors.project && (
+                      <span className="contact_form-error">{formik.errors.project}</span>
+                    )}
                  </div>
-                 <button  className="button button--flex">
+                 <button type="submit" disabled={formik.isSubmitting} className="button button--flex">
           Submit
           <svg
             className="button__icon"

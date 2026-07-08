@@ -107,6 +107,19 @@
     resize: none;
 }
 
+.contact_form-error {
+    position: absolute;
+    left: 0.5rem;
+    bottom: -1.2rem;
+    font-size: var(--smaller-font-size);
+    color: #dc2626;
+    z-index: 11;
+}
+
+.contact_form-input.has-error {
+    border-color: #dc2626;
+}
+
 
 /*=============== BREAKPOINTS ===============*/
 

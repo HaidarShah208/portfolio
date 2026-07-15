@@ -5,7 +5,7 @@ const movie = '/assests/movie.png'
 const book = '/assests/book.png'
 const medicare = '/assests/medicare.png'
 const recipe = '/assests/recipe.png'
-const crud = '/assests/crud.png'
+const pos = '/assests/POS.png'
 
 
 
@@ -27,10 +27,10 @@ export const projectData=[
     },
     {
         id:9,
-        img:crud,
-        title:'CRUD',
+        img:pos,
+        title:'POS Management System',
         category:'React',
-        link:'https://react-crud-eosin-seven.vercel.app/'
+        link:'https://pos-frontend-delta-ten.vercel.app'
         
     },
     {

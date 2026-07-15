@@ -1,13 +1,13 @@
 "use client";
 
-import Header from "../compenents/header/Header";
+import Header from "../components/header/Header";
 import Home from "../sections/home/Home";
 import About from "../sections/about/About";
 import Skills from "../sections/skills/Skills";
 import Services from "../sections/services/Services";
 import Journey from "../sections/journey";
 import Contect from "../sections/contect/Contect";
-import Footer from "../compenents/footer/Footer";
+import Footer from "../components/footer/Footer";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Project from "../sections/projects/Project";
